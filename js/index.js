@@ -140,10 +140,10 @@ function calculateBmi(event) {
     let hasil = testBmi(parseInt(weight), parseInt(height));
     // console.log(weight +'_'+ height);
     //UPDATE GAMBAR DOKTER
-    if (hasil.Status === 'Underweight' || hasil.Status === "Overweight" || hasil.Status === "Obesity class 1" || hasil.Status === "Obesity class 2" || hasil.Status === "Obesity class 3") {
-        dokter.src = "../cemas.jpg";
-    } else {
+    if (hasil.BMI > 18.5 && hasil.BMI <= 24.9) {
         dokter.src = "../senang.jpg";
+    } else {
+        dokter.src = "../cemas.jpg";
     }
 
     //SETTING OUTPUT
@@ -162,8 +162,8 @@ function calculateBmi(event) {
 
 //FUNGSI CHOLESTEROL
 function testBmi(weight,height) {
-    let mass = weight/(height*height); 
-    console.log(mass);
+    let mass = weight/(height/100*height/100); 
+    // console.log(mass);
     let result = {
         BMI :  0,
         Status : []
