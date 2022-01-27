@@ -1,9 +1,9 @@
 header {
-  background-color: #000000;
+  background-color: #c0fbff;
 }
 .logo {
-  width: 18%;
-  padding: 5px;
+  width: 25%;
+
 }
 #header1 {
   width: 60%;
@@ -26,9 +26,9 @@ header {
 }
 
 .text-banner {
-    color: #494c4d;
+    color: #0f0033;
     position: absolute;
-    bottom: 50%;
+    bottom: 35%;
     left: 20%;
     font: condensed bolder 70px roboto;
 }
@@ -69,7 +69,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   padding: 2px;
-  width: 60%;
+  width: 45%;
   margin: auto;
 }
 
@@ -97,6 +97,26 @@ body {
   cursor: pointer;
   transform: scale(1);
   transition: 0.3s ease-in-out;
+}
+
+.shop-now2 {
+  border-radius: 50%;
+  max-width: 100%;
+  opacity: 50%;
+}
+.shop-now2:hover {
+  border-radius: 50%;
+  max-width: 100%;
+  opacity: 100%;
+}
+.aboutUsNama{
+  text-align:center; 
+  font-size:18px;
+}
+h1{
+  font: 55px roboto;
+  color: #00ADB5;
+  margin:0px;
 }
 
 .shop-now:hover .shop2 {
@@ -212,9 +232,9 @@ h1 {
   margin-top: 5px;
 }
 
-.content-text {
-  font: condensed 14px roboto;
-  color: #393e46;
+.content-text{
+  font: condensed 20px roboto;
+  color:  #393E46;
   margin: 5px 0;
 }
 article img {
@@ -295,7 +315,7 @@ h3 {
 .topnav a {
   float: left;
   display: block;
-  color: #f2f2f2;
+  color: #000000;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -310,11 +330,12 @@ h3 {
 .topnav .menu {
   display: none;
 }
-.containter-shop-now {
-  display: flex;
-  width: 60%;
+.containter-shop-now{
+  display:flex; 
+  width: 60%; 
   margin: auto;
   padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 aside {
@@ -424,7 +445,25 @@ aside {
   }
 
   .flex-row {
-    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2px;
+    width: 45%;
+    margin: auto;
+  }
+  .flex-row2 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2px;
+    width: 30%;
+    margin: auto;
+  }
+  .flex-row3 {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2px;
+    width: 60%;
+    margin: auto;
   }
 
   .flex-column {

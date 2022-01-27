@@ -14,6 +14,75 @@
     integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
     crossorigin="anonymous"></script>
   <title>CHECK YOURSELF</title>
+  <style>
+    .flex-column2,
+    .flex-column-product {
+      flex: 10%;
+      max-width: 100%;
+      padding: 0 8px;
+    }
+
+    .flex-row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2px;
+      width: 45%;
+      margin: auto;
+    }
+
+    .flex-row2 {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2px;
+      width: 30%;
+      margin: auto;
+    }
+
+    .flex-row3 {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2px;
+      width: 60%;
+      margin: auto;
+    }
+
+    .shop-now2 {
+      border-radius: 50%;
+      max-width: 100%;
+      opacity: 50%;
+    }
+
+    .shop-now2:hover {
+      border-radius: 50%;
+      max-width: 100%;
+      opacity: 100%;
+    }
+
+    .aboutUsNama {
+      text-align: center;
+      font-size: 18px;
+    }
+
+    h1 {
+      font: 55px roboto;
+      color: #00ADB5;
+      margin: 0px;
+    }
+
+    .content-text {
+      font: condensed 20px roboto;
+      color: #393E46;
+      margin: 5px 0;
+    }
+
+    .containter-shop-now {
+      display: flex;
+      width: 60%;
+      margin: auto;
+      padding-top: 40px;
+      padding-bottom: 20px;
+    }
+  </style>
 </head>
 
 <body>
@@ -21,12 +90,12 @@
     <div id="header1">
       <div class="topnav" id="myTopnav">
         <div class="flex-grow">
-          <img src="assets/image/main-logo.png" class="logo" />
+          <img src="assets/image/logoNew-01.png" class="logo" />
         </div>
         <a href="#home">Home</a>
-        <a href="#AboutUs">About Us</a>
-        <a href="#Products">Products</a>
-        <a href="#Shop">Shop</a>
+        <a href="#aboutUs">About Us</a>
+        <a href="#Products1">Products</a>
+        <a href="#Result">Result</a>
         <a href="javascript:void(0);" class="menu" onclick="myFunction()">
           <img src="assets/image/burger-menu.svg" class="icon" />
         </a>
@@ -38,68 +107,112 @@
     <div id="header2">
       <picture>
         <source srcset="assets/image/main-banner-mobile.jpg" media="(max-width:600px)" />
-        <img src="assets/image/main-banner-desktop.jpg" alt="main banner" style="width: 100%" />
+        <img src="assets/image/banner.jpg" alt="main banner" style="width: 100%" />
       </picture>
-      <span class="hide-mobile text-banner">BRING YOUR PASSION<br />WITH US..</span>
-      <span class="hide-desktop text-banner">BRING YOUR<br />PASSION<br />WITH US..</span>
-      <button class="position-button">Start Now</button>
+      <span class="hide-mobile text-banner">LET'S CHECK<br />YOURSELF..</span>
+      <span class="hide-desktop text-banner">LET'S CHECK<br />YOURSELF..</span>
     </div>
   </div>
-
   <main>
-    <!--ABOUT US-->
-    <article id="AboutUs" class="container-igna">
-      <img src="assets/image/illustrasi.jpg" alt="iluustrsi NBA" />
-      <div class="container-about">
-        <h1>About Us</h1>
-        <p class="sub-judul" style="color: #393e46">
-          "Some people want it to happen, some wish it would happen, others
-          make it happen."
-        </p>
-        <p class="content-text">
-          we are a company in Indonesia which is engaged in sports, especially
-          for basketball. We provide all sports and lifestyle equipment that
-          makes you more stylish and of course new, our stuff give of course
-          is the best item at the best price you can get.
-        </p>
-      </div>
-    </article>
 
+    <!-- MENU UTAMA START -->
     <div id="Shop" class="containter-shop-now">
-      <div style="margin: auto">
-        <h1 class="text-center">SHOP NOW</h1>
-        <p class="content-text text-center">
-          GET YOUR FAVORITE PRODUCT FROM OUR MARKETPLACE
-        </p>
+      <div id='Products1' style="margin: auto;">
+        <h1 class="text-center">PROGRAM KAMI</h1>
+        <p class="content-text text-center">SILAHKAN PILIH SESUAI YANG KAMU INGINKAN, LALU KLIK!!</p>
       </div>
     </div>
     <div class="flex-row">
       <div class="flex-column">
         <div class="shop-now">
-          <img src="assets/image/shoes-airJordan.jpg" alt="sepatu air jordan" class="shop2" />
-          <img src="assets/image/logo-airJordan.jpg" alt="logo air jordan" class="shop" />
-        </div>
-        <div class="shop-now">
-          <img src="assets/image/shoes-nike.jpg" alt="sepatu nike" class="shop2" />
-          <img src="assets/image/logo-nike.jpg" alt="logo nike" class="shop" />
+          <a href="akg">
+            <img src="assets/image/akg1a.jpg" alt="akg" class="shop2">
+            <img src="assets/image/akg1.jpg" alt="akg" class="shop">
+          </a>
         </div>
       </div>
       <div class="flex-column">
         <div class="shop-now">
-          <img src="assets/image/shoes-adidas.jpg" alt="sepatu adidas" class="shop2" />
-          <img src="assets/image/logo-adidas.jpg" alt="logo adidas" class="shop" />
-        </div>
-        <div class="shop-now">
-          <img src="assets/image/shoes-irving.jpg" alt="sepatu irving" class="shop2" />
-          <img src="assets/image/logo-irving.jpg" alt="logo irving" class="shop" />
+          <a href="bmi">
+            <img src="assets/image/bmi1a.jpg" alt="bmi" class="shop2">
+            <img src="assets/image/bmi1.jpg" alt="bmi" class="shop">
+          </a>
         </div>
       </div>
-      <div class="shop-now">
-        <img src="assets/image/shoes-irving.jpg" alt="sepatu irving" class="shop2" />
-        <img src="assets/image/logo-irving.jpg" alt="logo irving" class="shop" />
+      <div class="flex-column">
+        <div class="shop-now">
+          <a href="gulaDarah">
+            <img src="assets/image/guladarah1a.jpg" alt="guladarah" class="shop2">
+            <img src="assets/image/guladarah1.jpg" alt="guladarah" class="shop">
+          </a>
+        </div>
       </div>
     </div>
+
+    <div class="flex-row2">
+      <div class="flex-column">
+        <div class="shop-now">
+          <a href="tekananDarah">
+            <img src="assets/image/tekanan_darah1a.jpg" alt="tekanan_darah" class="shop2">
+            <img src="assets/image/tekanan_darah1.jpg" alt="tekanan_darah" class="shop">
+          </a>
+        </div>
+      </div>
+      <div class="flex-column">
+        <div class="shop-now">
+          <a href="kolestrol">
+            <img src="assets/image/kolesterol1a.jpg" alt="tekanan_darah" class="shop2">
+            <img src="assets/image/kolesterol.jpg" alt="tekanan_darah" class="shop">
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- MENU UTAMA END -->
+
+    <!--ABOUT US START, nanti bisa dipindah untuk penempatan-->
+    <div id="Shop" class="containter-shop-now">
+      <div id='aboutUs' style="margin: auto;">
+        <h1 class="text-center">ABOUT US</h1>
+        <p class="content-text text-center">KAMI TIM KEBENARAN DARI KELOMPOK 6</p>
+      </div>
+    </div>
+    <div class="flex-row3">
+      <div class="flex-column2">
+        <div>
+          <img class="shop-now2" src="assets/image/nurrakhman.png" alt="nurrakhman" class="shop">
+          <p class="aboutUsNama">Nurrakhman Dwinanda</p>
+        </div>
+      </div>
+      <div class="flex-column2">
+        <div>
+          <img class="shop-now2" src="assets/image/fitra.jpg" alt="fitra" class="shop">
+          <p class="aboutUsNama">Fitra Apri </p>
+        </div>
+      </div>
+      <div class="flex-column2">
+        <div>
+          <img class="shop-now2" src="assets/image/rosa.png" alt="rosa" class="shop">
+          <p class="aboutUsNama">Rosa Alawiyah</p>
+        </div>
+      </div>
+      <div class="flex-column2">
+        <div>
+          <img class="shop-now2" src="assets/image/berry.jpg" alt="berry" class="shop">
+          <p class="aboutUsNama">Busyairi Ramadhan</p>
+        </div>
+      </div>
+      <div class="flex-column2">
+        <div>
+          <img class="shop-now2" src="assets/image/igna.png" alt="igna" class="shop">
+          <p class="aboutUsNama">Ignatius Andri</p>
+        </div>
+      </div>
+    </div>
+    <!-- ABOUT UD END -->
+
   </main>
+
+
 
 
   <div class="container">
@@ -140,10 +253,12 @@
         <h5 style="margin-top: 40px;">Kolesterol</h5>
         <form>
           <div class="form-group">
-            <input type="text" id="fnama-cole" class="form-control" name="fnama-cole" placeholder="Nama anda" required />
+            <input type="text" id="fnama-cole" class="form-control" name="fnama-cole" placeholder="Nama anda"
+              required />
           </div>
           <div class="form-group">
-            <input type="number" id="fkolesterol" class="form-control" name="fkolesterol" placeholder="Nilai Kolesterol anda" />
+            <input type="number" id="fkolesterol" class="form-control" name="fkolesterol"
+              placeholder="Nilai Kolesterol anda" />
           </div>
           <div class="form-group">
             <select id="fbloop" name="fbloop" class="form-control">
@@ -176,7 +291,8 @@
             <input type="number" id="age-bs" class="form-control" name="age-bs" placeholder="Enter your age" />
           </div>
           <div class="form-group">
-            <input type="number" id="blood-sugar-bs" class="form-control" name="blood-sugar-bs" placeholder="Enter your blood sugar" />
+            <input type="number" id="blood-sugar-bs" class="form-control" name="blood-sugar-bs"
+              placeholder="Enter your blood sugar" />
           </div>
           <button class="btn btn-primary mb-2" onclick="bloodSugar(event)" class="process">
             Proses
