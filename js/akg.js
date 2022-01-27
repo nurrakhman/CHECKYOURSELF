@@ -1,6 +1,6 @@
 const value = (gender, weight, height, age, intensity) => {
     // source: https://www.sehatq.com/artikel/memahami-angka-kecukupan-gizi-dan-cara-memenuhinya
-    let result;
+    let result = {};
     let calorie = 0;
     let intensityIndex = 0;
     
@@ -40,6 +40,10 @@ const value = (gender, weight, height, age, intensity) => {
     const lemak = Math.floor((0.15 * calorieNeeded) / 9)
 
     result = `Kebutuhan protein Anda ${protein} gram, karbohidrat ${karbohidrat} gram, dan lemak ${lemak} gram dalam sehari`
+
+    // result.protein = protein
+    // result.karbohidrat = karbohidrat
+    // result.lemak = lemak
 
     return result;
 }
