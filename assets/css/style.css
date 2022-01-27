@@ -26,7 +26,7 @@ header {
 }
 
 .text-banner {
-    color: #00adb5;
+    color: #494c4d;
     position: absolute;
     bottom: 50%;
     left: 20%;
@@ -48,14 +48,14 @@ header {
 
 button {
     padding: 5px 30px;
-    background-color: #EB7B41;
+    background-color: #444241;
     font: condensed 16px roboto;
     color: white;
     border-radius: 10px;
     border-width: 0px;
 }
 button:hover {
-    background-color: #00adb5;
+    background-color: #32393a;
     cursor: pointer;
 }
 
@@ -514,7 +514,6 @@ aside{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: yellowgreen;
   }
   
   .header {
@@ -533,14 +532,14 @@ aside{
   }
   
   .bp {
-    background: turquoise;
+    background: #345766;
   }
   .cole {
-    background: darksalmon;
+    background: #345766;
   }
   
   .form {
-    background: tomato;
+    background: #BDDCEA;
     height: 500px;
     width: 500px;
     border-radius: 30px;
