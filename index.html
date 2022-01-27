@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style/style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tugas Akhir Ignatius</title>
+  </head>
+
+  <body>
+    <header class="sticky">
+      <div id="header1">
+        <div class="topnav" id="myTopnav">
+          <div class="flex-grow">
+            <img src="image/main-logo.png" class="logo" />
+          </div>
+          <a href="#home">Home</a>
+          <a href="#AboutUs">About Us</a>
+          <a href="#Products">Products</a>
+          <a href="#Shop">Shop</a>
+          <a href="javascript:void(0);" class="menu" onclick="myFunction()">
+            <img src="image/burger-menu.svg" class="icon" />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div id="home">
+      <div id="header2">
+        <picture>
+          <source
+            srcset="image/main-banner-mobile.jpg"
+            media="(max-width:600px)"
+          />
+          <img
+            src="image/main-banner-desktop.jpg"
+            alt="main banner"
+            style="width: 100%"
+          />
+        </picture>
+        <span class="hide-mobile text-banner"
+          >BRING YOUR PASSION<br />WITH US..</span
+        >
+        <span class="hide-desktop text-banner"
+          >BRING YOUR<br />PASSION<br />WITH US..</span
+        >
+        <button class="position-button">Start Now</button>
+      </div>
+    </div>
+
+    <main>
+      <!--ABOUT US-->
+      <article id="AboutUs" class="container-igna">
+        <img src="image/illustrasi.jpg" alt="iluustrsi NBA" />
+        <div class="container-about">
+          <h1>About Us</h1>
+          <p class="sub-judul" style="color: #393e46">
+            "Some people want it to happen, some wish it would happen, others
+            make it happen."
+          </p>
+          <p class="content-text">
+            we are a company in Indonesia which is engaged in sports, especially
+            for basketball. We provide all sports and lifestyle equipment that
+            makes you more stylish and of course new, our stuff give of course
+            is the best item at the best price you can get.
+          </p>
+        </div>
+      </article>
+
+      <div id="Shop" class="containter-shop-now">
+        <div style="margin: auto">
+          <h1 class="text-center">SHOP NOW</h1>
+          <p class="content-text text-center">
+            GET YOUR FAVORITE PRODUCT FROM OUR MARKETPLACE
+          </p>
+        </div>
+      </div>
+      <div class="flex-row">
+        <div class="flex-column">
+          <div class="shop-now">
+            <img
+              src="image/shoes-airJordan.jpg"
+              alt="sepatu air jordan"
+              class="shop2"
+            />
+            <img
+              src="image/logo-airJordan.jpg"
+              alt="logo air jordan"
+              class="shop"
+            />
+          </div>
+          <div class="shop-now">
+            <img src="image/shoes-nike.jpg" alt="sepatu nike" class="shop2" />
+            <img src="image/logo-nike.jpg" alt="logo nike" class="shop" />
+          </div>
+        </div>
+        <div class="flex-column">
+          <div class="shop-now">
+            <img
+              src="image/shoes-adidas.jpg"
+              alt="sepatu adidas"
+              class="shop2"
+            />
+            <img src="image/logo-adidas.jpg" alt="logo adidas" class="shop" />
+          </div>
+          <div class="shop-now">
+            <img
+              src="image/shoes-irving.jpg"
+              alt="sepatu irving"
+              class="shop2"
+            />
+            <img src="image/logo-irving.jpg" alt="logo irving" class="shop" />
+          </div>
+        </div>
+        <div class="shop-now">
+            <img
+              src="image/shoes-irving.jpg"
+              alt="sepatu irving"
+              class="shop2"
+            />
+            <img src="image/logo-irving.jpg" alt="logo irving" class="shop" />
+          </div>
+        </div>
+        </div>
+      </div>
+    </main>
+    <div class="container">
+      <div class="test-content bp">
+        <div class="form">
+          <h1>Tekanan Darah:</h1>
+          <form>
+            <label for="fnama-bp">Nama: </label>
+            <input
+              type="text"
+              id="fnama-bp"
+              name="nama-bp"
+              placeholder="Nama anda"
+              required
+            />
+            <label for="fdiastolik">Diastolik: </label>
+            <input
+              type="number"
+              id="fdiastolik"
+              name="diastolik"
+              placeholder="Nilai diastolik anda"
+              required
+            />
+            <label for="fsistolik">Sistolik: </label>
+            <input
+              type="number"
+              id="fsistolik"
+              name="sistolik"
+              placeholder="Nilai sistolik anda"
+              required
+            />
+            <button onclick="calculateBloodpressure(event)" class="process">
+              Proses
+            </button>
+          </form>
+        </div>
+        <div class="result">
+          <img id="dokter-bp" src="berpikir.jpg" alt="" />
+          <div class="result-info">
+            <p id="result-bp">Silahkan masukan data...</p>
+          </div>
+        </div>
+      </div>
+      <div class="test-content cole">
+        <div class="form">
+          <h1>Kolesterol</h1>
+          <form>
+            <label for="fnama-cole">Nama: </label>
+            <input
+              type="text"
+              id="fnama-cole"
+              name="fnama-cole"
+              placeholder="Nama anda"
+              required
+            />
+            <label for="fkolesterol">Nilai Kolesterol: </label>
+            <input
+              type="number"
+              id="fkolesterol"
+              name="fkolesterol"
+              placeholder="Nilai Kolesterol anda"
+            />
+            <label for="fbloop">Tekanan Darah: </label>
+            <select id="fbloop" name="fbloop">
+              <option value="tinggi">Tekanan Darah Tinggi</option>
+              <option value="normal">Tekanan Darah Normal</option>
+              <option value="rendah">Tekanan Darah Rendah</option>
+            </select>
+            <button onclick="calculateCholesterol(event)" class="process">
+              Proses
+            </button>
+          </form>
+        </div>
+        <div class="result">
+          <img id="dokter-cole" src="berpikir.jpg" alt="" />
+          <div class="result-info">
+            <p id="result-cole">Silahkan masukan data...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div class="container-footer">
+        <div class="icon-footer">
+          <!-- <p>Created By Kelompok 6</p> -->
+        </div>
+      </div>
+    </footer>
+    <script src="./js/index.js"></script>
+  </body>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  </script>
+</html>
