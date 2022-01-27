@@ -178,16 +178,18 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 mt-50 text-center">
-                    <div class="single-feature-box">
-                        <div class="icon">
-                            <img src="assets/images/icons/feature-icon-02.png" alt="">
+                    <a href="#bloodPressureForm">
+                        <div class="single-feature-box">
+                            <div class="icon">
+                                <img src="assets/images/icons/feature-icon-02.png" alt="">
+                            </div>
+                            <div class="content">
+                                <h3 class="title">Blood Pressure Checking</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp
+                                    or incididunt ut labore et dolore.</p>
+                            </div>
                         </div>
-                        <div class="content">
-                            <h3 class="title">Blood Pressure Checking</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp
-                                or incididunt ut labore et dolore.</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 mt-50 text-center">
                     <div class="single-feature-box">
@@ -487,7 +489,7 @@
     <!-- form blood sugar area end -->
 
     <!-- form blood pressure area start -->
-    <div class="contact-area pt-110 pb-110 bg_img" data-overlay="94"
+    <div id="bloodPressureForm" class="contact-area pt-110 pb-110 bg_img" data-overlay="94"
         data-background="assets/images/bg/contact-bg-1.jpg">
         <div class="container">
             <div class="row">
@@ -499,24 +501,28 @@
                                     aria-labelledby="appointment-tab">
                                     <div class="contact-form">
                                         <h3 class="text-center mb-60">Check your blood pressure here</h3>
-                                        <form action="#">
+                                        <form>
                                             <div class="row">
                                                 <div class="form-group">
-                                                    <input type="text" placeholder="Enter your name">
+                                                    <input type="text" id="fnama-bp" name="nama-bp"
+                                                        placeholder="Enter your name">
                                                     <span class="icon"><i class="fas fa-venus-mars"></i></span>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="number" placeholder="Enter your diastolik">
+                                                    <input type="number" id="fdiastolik" name="diastolik"
+                                                        placeholder="Enter your diastolik">
                                                     <span class="icon"><i class="fas fa-heartbeat"></i><span>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="number" placeholder="Enter your sistolik">
+                                                    <input type="number" id="fsistolik" name="sistolik"
+                                                        placeholder="Enter your sistolik">
                                                     <span class="icon"><i class="fas fa-file-medical-alt"></i></span>
                                                 </div>
                                             </div>
                                             <div class="row justify-content-center">
                                                 <div class="col-lg-4 text-center">
-                                                    <a href="#" class="site-btn red">Submit</a>
+                                                    <button onclick="calculateBloodpressure(event)"class="site-btn red process">Submit
+                                                    </button>
                                                 </div>
                                             </div>
                                         </form>
@@ -528,12 +534,13 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade active show" id="appointment" role="tabpanel"
                                     aria-labelledby="appointment-tab">
-                                    <div class="contact-form">
+                                    <div class="contact-form result">
                                         <div class="col">
-                                            <img src="assets/images/ilustration/ilustration-2.png" alt="">
+                                            <img id="dokter-bp" src="assets/images/ilustration/ilustration-2.png"
+                                                alt="">
                                         </div>
-                                        <div class="row">
-                                            <p class="result mb-130 mt-20 text-center">
+                                        <div class="row result-info">
+                                            <p id="result-bp" class="result mb-130 mt-20 text-center">
                                                 INI RESULT
                                             </p>
                                         </div>
@@ -548,6 +555,78 @@
     </div>
     <!-- form blood pressure area end -->
 
+    <!-- form cholestrol area start -->
+    <div class="contact-area pt-110 pb-110 bg_img" data-overlay="94"
+        data-background="assets/images/bg/contact-bg-1.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade active show" id="appointment" role="tabpanel"
+                                    aria-labelledby="appointment-tab">
+                                    <div class="contact-form">
+                                        <h3 class="text-center mb-60">Check your Cholestrol here</h3>
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <input id="fnama-cole" name="fnama-cole" type="text"
+                                                        placeholder="Enter your name">
+                                                    <span class="icon"><i class="fas fa-venus-mars"></i></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input id="fkolesterol" name="fkolesterol" type="number"
+                                                        placeholder="Enter your cholesterol level">
+                                                    <span class="icon"><i class="fas fa-heartbeat"></i></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <select id="fbloop" name="fbloop">
+                                                        <option data-display="Select Tekanan Darah">Select Tekanan Darah
+                                                        </option>
+                                                        <option value="tinggi">Tekanan Darah Tinggi</option>
+                                                        <option value="normal">Tekanan Darah Normal</option>
+                                                        <option value="rendah">Tekanan Darah Rendah</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type='number' placeholder="Enter your blood pressure">
+                                                    <span class="icon"><i class="fas fa-heartbeat"></i></span>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-4 text-center">
+                                                    <button onclick="calculateCholesterol(event)" class="site-btn red process">Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 illustration">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade active show" id="appointment" role="tabpanel"
+                                    aria-labelledby="appointment-tab">
+                                    <div class="contact-form result">
+                                        <div class="col">
+                                            <img id="dokter-cole" src="assets/images/ilustration/ilustration-2.png" alt="">
+                                        </div>
+                                        <div class="row" class="result-info">
+                                            <p id="result-cole" class="result mb-130 mt-20 text-center">
+                                                INI RESULT
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- form cholestrol area end -->
 
     <!-- form BMI area start -->
     <div class="contact-area pt-110 pb-110 bg_img" data-overlay="94"
@@ -612,68 +691,6 @@
     </div>
     <!-- form BMI area end -->
 
-    <!-- form cholestrol area start -->
-    <div class="contact-area pt-110 pb-110 bg_img" data-overlay="94"
-        data-background="assets/images/bg/contact-bg-1.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade active show" id="appointment" role="tabpanel"
-                                    aria-labelledby="appointment-tab">
-                                    <div class="contact-form">
-                                        <h3 class="text-center mb-60">Check your Cholestrol here</h3>
-                                        <form action="#">
-                                            <div class="row">
-                                                <div class="form-group">
-                                                    <input type="text" placeholder="Enter your name">
-                                                    <span class="icon"><i class="fas fa-venus-mars"></i></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="number" placeholder="Enter your cholesterol level">
-                                                    <span class="icon"><i class="fas fa-heartbeat"></i></span>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type='number' placeholder="Enter your blood pressure">
-                                                    <span class="icon"><i class="fas fa-heartbeat"></i></span>
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center">
-                                                <div class="col-lg-4 text-center">
-                                                    <a href="#" class="site-btn red">Submit</a>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 illustration">
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade active show" id="appointment" role="tabpanel"
-                                    aria-labelledby="appointment-tab">
-                                    <div class="contact-form">
-                                        <div class="col">
-                                            <img src="assets/images/ilustration/ilustration-2.png" alt="">
-                                        </div>
-                                        <div class="row">
-                                            <p class="result mb-130 mt-20 text-center">
-                                                INI RESULT
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- form cholestrol area end -->
-
     <!-- footer start -->
     <footer class="site-footer pt-100 pb-80">
         <div class="container">
@@ -690,6 +707,7 @@
     <!-- footer end -->
 
     <!--========= JS Here =========-->
+    <script src="./js/index.js"></script>
     <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="assets/js/jquery-2.2.4.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
