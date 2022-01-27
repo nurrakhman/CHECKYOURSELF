@@ -1,4 +1,3 @@
-
 /////////////////////// BLOOD PRESSURE ///////////////////////
 function calculateBloodpressure(event){
     //Prevent refresh page
@@ -114,4 +113,87 @@ function cholesterol(kadarKolesrol, bloodPressure){
     }else{
         return 'kadar kolestrol kamu tidak normal'
     }
+}
+
+
+/////////////////////// BLOOD PRESSURE ///////////////////////
+function bloodSugar(event){
+    //Prevent refresh page
+    event.preventDefault();
+    //DOM Form
+    let name = document.getElementById("fnama-bs").value;
+    let age = document.getElementById("age-bs").value;
+    let blood_sugar = document.getElementById("blood-sugar-bs").value;
+    //DOM Tampilan
+    let resultTxt = document.getElementById("result-bs");
+    let dokter = document.getElementById("dokter-bs")
+    
+    //VALIDASI KOSONG TIDAK ?
+    if(!name || !age || !blood_sugar){
+        alert("Mohon lengkapi semua data terdahulu");
+        return
+    }
+
+    //MODUL FUNGSI
+    let hasil = calculateBloodSugar(name, parseInt(age), parseInt(blood_sugar));
+    console.log(hasil);
+    
+    //UPDATE GAMBAR DOKTER
+    if(hasil.status === "Terlalu Tinggi" || hasil.status === "Terlalu Rendah"){
+        dokter.src="https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
+    }else{
+        dokter.src="https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+    }
+
+    //SETTING OUTPUT
+    let output;
+    if(hasil.status === "Normal"){
+        output = `${name}, tekanan darah kamu ${hasil.status}, Jaga terus ya kesehatan mu`
+    }else{
+        output = `${name}, tekanan darah kamu ${hasil.status}, hati - hati kamu dapat mengidap ${hasil.risk}. Jaga pola makan kamu ya!`
+    } 
+
+    //UPFATE RESULT
+    resultTxt.innerText = output;
+}
+// FUNGSICALCULATBLOODSUGAR
+const calculateBloodSugar = (ageParams, bloodPressureParams) => {
+    // https://www.anlene.com/id/ms/memahami-kadar-gula-darah-normal-tubuh-kita.html
+    let result = {
+        status : "",
+        risk : ""
+    }
+    if (ageParams < 6) {
+        if (bloodPressureParams <= 200 && bloodPressureParams >= 100) {
+            result.status = "Normal";
+        }else if(bloodPressureParams < 100){
+            result.status = "Terlalu Rendah";
+        }else if(bloodPressureParams > 200){
+            result.status = "Terlalu Tinggi";
+        }
+    } else if (ageParams <= 12 && ageParams >= 6) {
+        if (bloodPressureParams <= 70 && bloodPressureParams >= 150) {
+            result.status = "Normal";
+        }else if(bloodPressureParams < 70){
+            result.status = "Terlalu Rendah";
+        }else if(bloodPressureParams > 150){
+            result.status = "Terlalu Tinggi";
+        }
+    } else {
+        if (bloodPressureParams >= 70 && bloodPressureParams <= 130) {
+            result.status = "Normal";
+        }else if(bloodPressureParams < 70){
+            result.status = "Terlalu Rendah";
+        }else if(bloodPressureParams > 130){
+            result.status = "Terlalu Tinggi";
+        }
+    }
+    if (result.status === "Terlalu Rendah") {
+        result.risk = "Lemas, Gelisah, Kulit terlihat pucat"
+    }else if(result.status === "Terlalu Tinggi") {
+        result.risk = "Nafsu makan meningkat, Mudah lelah, Gelisah"
+    }else{
+        result.risk = "Anda masih normal, jaga terus ya kesehatanmu"
+    }
+    return result
 }
