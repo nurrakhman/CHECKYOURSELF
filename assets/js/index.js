@@ -28,9 +28,9 @@ function calculateBloodpressure(event){
     
     //UPDATE GAMBAR DOKTER
     if(hasil.status === "Tekanan darah Tinggi" || hasil.status === "Tekanan darah Rendah"){
-        dokter.src="../cemas.jpg";
+        dokter.src="/assets/cemas.jpg";
     }else{
-        dokter.src="../senang.jpg";
+        dokter.src="/assets/senang.jpg";
     }
 
     //SETTING OUTPUT
@@ -88,9 +88,9 @@ function calculateCholesterol(event){
     
     //UPDATE GAMBAR DOKTER
     if(hasil === "kadar kolestrol kamu terlalu tinggi" || hasil === "kadar kolestrol kamu tidak normal"){
-        dokter.src= "../cemas.jpg";
+        dokter.src="/assets/cemas.jpg";
     }else{
-        dokter.src= "../senang.jpg";
+        dokter.src="/assets/senang.jpg";
     }
 
     //SETTING OUTPUT
