@@ -26,10 +26,10 @@ function calculateBloodpressure(event) {
     let hasil = bloodPressure(parseInt(diastolik), parseInt(sistolik));
 
     //UPDATE GAMBAR DOKTER
-    if(hasil.status === "Tekanan darah Tinggi" || hasil.status === "Tekanan darah Rendah"){
-        dokter.src="https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
-    }else{
-        dokter.src="https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+    if (hasil.status === "Tekanan darah Tinggi" || hasil.status === "Tekanan darah Rendah") {
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
+    } else {
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
     }
 
     //SETTING OUTPUT
@@ -86,10 +86,10 @@ function calculateCholesterol(event) {
     let hasil = cholesterol(parseInt(kolesterol), bp);
 
     //UPDATE GAMBAR DOKTER
-    if(hasil === "kadar kolestrol kamu terlalu tinggi" || hasil === "kadar kolestrol kamu tidak normal"){
-        dokter.src="https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
-    }else{
-        dokter.src="https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+    if (hasil === "kadar kolestrol kamu terlalu tinggi" || hasil === "kadar kolestrol kamu tidak normal") {
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
+    } else {
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
     }
 
     //SETTING OUTPUT
@@ -117,7 +117,7 @@ function cholesterol(kadarKolesrol, bloodPressure) {
 
 
 /////////////////////// BLOOD PRESSURE ///////////////////////
-function bloodSugar(event){
+function bloodSugar(event) {
     //Prevent refresh page
     event.preventDefault();
     //DOM Form
@@ -127,72 +127,81 @@ function bloodSugar(event){
     //DOM Tampilan
     let resultTxt = document.getElementById("result-bs");
     let dokter = document.getElementById("dokter-bs")
-    
+
     //VALIDASI KOSONG TIDAK ?
-    if(!name || !age || !blood_sugar){
+    if (!name || !age || !blood_sugar) {
         alert("Mohon lengkapi semua data terdahulu");
         return
     }
-
+    console.log(parseInt(age) + " " + parseInt(blood_sugar));
     //MODUL FUNGSI
-    let hasil = calculateBloodSugar(name, parseInt(age), parseInt(blood_sugar));
-    console.log(hasil);
-    
+    let hasil = calculateBloodSugar(parseInt(age), parseInt(blood_sugar));
+
     //UPDATE GAMBAR DOKTER
-    if(hasil.status === "Terlalu Tinggi" || hasil.status === "Terlalu Rendah"){
-        dokter.src="https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
-    }else{
-        dokter.src="https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+    if (hasil.status === "Terlalu Tinggi" || hasil.status === "Terlalu Rendah") {
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
+    } else {
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
     }
 
     //SETTING OUTPUT
     let output;
-    if(hasil.status === "Normal"){
+    if (hasil.status === "Normal") {
         output = `${name}, tekanan darah kamu ${hasil.status}, Jaga terus ya kesehatan mu`
-    }else{
+    } else {
         output = `${name}, tekanan darah kamu ${hasil.status}, hati - hati kamu dapat mengidap ${hasil.risk}. Jaga pola makan kamu ya!`
-    } 
+    }
 
-    //UPFATE RESULT
+    //UPDATE RESULT
     resultTxt.innerText = output;
 }
 // FUNGSICALCULATBLOODSUGAR
 const calculateBloodSugar = (ageParams, bloodPressureParams) => {
     // https://www.anlene.com/id/ms/memahami-kadar-gula-darah-normal-tubuh-kita.html
     let result = {
-        status : "",
-        risk : ""
+        status: "",
+        risk: ""
     }
+    // console.log(bloodPressureParams);
     if (ageParams < 6) {
-        if (bloodPressureParams <= 200 && bloodPressureParams >= 100) {
-            result.status = "Normal";
-        }else if(bloodPressureParams < 100){
-            result.status = "Terlalu Rendah";
-        }else if(bloodPressureParams > 200){
+        // 5 tahun, 120 (normal)
+        // 5 tahun, 90 (terlalu rendah)
+        // 5 tahun, 220 (terlalu tinggi)
+        if (bloodPressureParams > 200) {
             result.status = "Terlalu Tinggi";
+        } else if (bloodPressureParams > 99) {
+            result.status = "Normal";
+        } else {
+            result.status = "Terlalu Rendah";
         }
     } else if (ageParams <= 12 && ageParams >= 6) {
+        //10 tahun, 80 (normal)
+        // 10 tahun, 60 (terlalu rendah)
+        // 10 tahun, 160 (terlalu tinggi)
         if (bloodPressureParams <= 70 && bloodPressureParams >= 150) {
             result.status = "Normal";
-        }else if(bloodPressureParams < 70){
+        } else if (bloodPressureParams < 70) {
             result.status = "Terlalu Rendah";
-        }else if(bloodPressureParams > 150){
+        } else if (bloodPressureParams > 150) {
             result.status = "Terlalu Tinggi";
         }
     } else {
+        // 15 tahun, 80 (normal)
+        // 15 tahun, 60 (terlalu rendah)
+        // 15 tahun, 160 (terlalu tinggi)
         if (bloodPressureParams >= 70 && bloodPressureParams <= 130) {
             result.status = "Normal";
-        }else if(bloodPressureParams < 70){
+        } else if (bloodPressureParams < 70) {
             result.status = "Terlalu Rendah";
-        }else if(bloodPressureParams > 130){
+        } else if (bloodPressureParams > 130) {
             result.status = "Terlalu Tinggi";
         }
     }
     if (result.status === "Terlalu Rendah") {
         result.risk = "Lemas, Gelisah, Kulit terlihat pucat"
-    }else if(result.status === "Terlalu Tinggi") {
+    } else if (result.status === "Terlalu Tinggi") {
         result.risk = "Nafsu makan meningkat, Mudah lelah, Gelisah"
-    }else{
+    } else {
         result.risk = "Anda masih normal, jaga terus ya kesehatanmu"
     }
     return result
@@ -222,9 +231,9 @@ function calculateBmi(event) {
     // console.log(weight +'_'+ height);
     //UPDATE GAMBAR DOKTER
     if (hasil.BMI > 18.5 && hasil.BMI <= 24.9) {
-        dokter.src="https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
-    }else{
-        dokter.src="https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+    } else {
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
     }
 
     //SETTING OUTPUT
@@ -242,32 +251,32 @@ function calculateBmi(event) {
 }
 
 //FUNGSI CHOLESTEROL
-function testBmi(weight,height) {
-    let mass = weight/(height/100*height/100); 
+function testBmi(weight, height) {
+    let mass = weight / (height / 100 * height / 100);
     // console.log(mass);
     let result = {
-        BMI :  0,
-        Status : []
+        BMI: 0,
+        Status: []
     }
-    if(mass <= 18.5){
+    if (mass <= 18.5) {
         result.BMI = mass.toFixed(2);
         result.Status.push('Underweight');
-    }else if (mass > 18.5 && mass <= 24.9) {
+    } else if (mass > 18.5 && mass <= 24.9) {
         result.BMI = mass.toFixed(2);
         result.Status.push('Normal Weight');
-    }else if (mass > 25 && mass <= 29.9) {
+    } else if (mass > 25 && mass <= 29.9) {
         result.BMI = mass.toFixed(2);
         result.Status.push('Overweight');
-    }else if (mass > 30 && mass <= 34.9) {
+    } else if (mass > 30 && mass <= 34.9) {
         result.BMI = mass.toFixed(2);
         result.Status.push('Obesity Class 1');
-    }else if (mass > 35 && mass <= 39.9) {
+    } else if (mass > 35 && mass <= 39.9) {
         result.BMI = mass.toFixed(2);
         result.Status.push('Obesity Class 2');
-    }else if(mass >= 40){
+    } else if (mass >= 40) {
         result.BMI = mass.toFixed(2);
         result.Status.push('Obesity Class 3');
     }
     result.BMI = Number(result.BMI)
     return result
-  }
+}
