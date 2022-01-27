@@ -10,74 +10,26 @@
 
     <!--====== Title ======-->
     <title>CHECK YOURSELF</title>
-
     <!--====== Favicon ======-->
-    <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="images/x-icon" />
+    <link rel="shortcut icon" href="assets/images/logo.png" type="images/x-icon" />
 
     <!--====== CSS Here ======-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/lightcase.css">
-    <link rel="stylesheet" href="assets/css/meanmenu.css">
-    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <!-- <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/datepicker.min.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="assets/css/default.css">
+
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+   
 
 </head>
 
 <body>
-
     <!-- preloader  -->
     <div id="preloader">
         <div id="ctn-preloader" class="ctn-preloader">
             <div class="animation-preloader">
                 <div class="spinner"></div>
-                <div class="txt-loading">
-                    <span data-text-preloader="C" class="letters-loading">
-                        C
-                    </span>
-                    <span data-text-preloader="H" class="letters-loading">
-                        H
-                    </span>
-                    <span data-text-preloader="E" class="letters-loading">
-                        E
-                    </span>
-                    <span data-text-preloader="C" class="letters-loading">
-                        C
-                    </span>
-                    <span data-text-preloader="K" class="letters-loading">
-                        K
-                    </span>
-                    <span data-text-preloader="Y" class="letters-loading">
-                        Y
-                    </span>
-                    <span data-text-preloader="O" class="letters-loading">
-                        O
-                    </span>
-                    <span data-text-preloader="U" class="letters-loading">
-                        U
-                    </span>
-                    <span data-text-preloader="R" class="letters-loading">
-                        R
-                    </span>
-                    <span data-text-preloader="S" class="letters-loading">
-                        S
-                    </span>
-                    <span data-text-preloader="E" class="letters-loading">
-                        E
-                    </span>
-                    <span data-text-preloader="L" class="letters-loading">
-                        L
-                    </span>
-                    <span data-text-preloader="F" class="letters-loading">
-                        F
-                    </span>
-                </div>
             </div>
             <div class="loader">
                 <div class="row">
@@ -105,7 +57,7 @@
             <div class="row align-items-center">
                 <div class="col-xl-3 col-lg-3">
                     <a href="index.html" class="site-logo">
-                        <img src="assets/images/logo/logo.png" alt="">
+                        <img style="max-width: 30%; margin-left: 450px;" src="assets/images/logo.png" alt="">
                     </a>
                     <div class="mobile-menu"></div>
                 </div>
@@ -113,18 +65,11 @@
                     <div class="mainmenu">
                         <nav id="mobile-menu">
                             <ul style="margin-left: 250px">
-                                <li><a href="#0">Home +</a>
+                                <li><a href="#menuKesehatan">Home </a>
                                 </li>
-                                <li><a href="#">Features +</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">Check Your BMI</a></li>
-                                        <li><a href="#">Check Your Blood Pressure</a></li>
-                                        <li><a href="#">Check Your Blood Sugar</a></li>
-                                        <li><a href="#">Check Your Cholestrol</a></li>
-                                        <li><a href="#">Check Your AKG</a></li>
-                                    </ul>
+                                <li><a href="#cekResult">Check Result</a>
                                 </li>
-                                <li><a href="#">About Us +</a>
+                                <li><a href="#aboutUs">About Us</a>
                                 </li>
                             </ul>
                         </nav>
@@ -147,8 +92,8 @@
                         <p>Lorem ipsum dolor sit amet, consectetur adipisi <br>
                             cing elit, sed do eiusmod tempor incidid.</p>
                         <div class="hero-buttons">
-                            <a href="#" class="site-btn">Our Departments</a>
-                            <a href="#" class="site-btn red">Learn More</a>
+                            <a href="#form" class="site-btn">Mulai cek</a>
+                            <a href="#menuKesehatan" class="site-btn red">Produk Kami</a>
                         </div>
                     </div>
                 </div>
@@ -160,10 +105,11 @@
     </section>
     <!-- Hero area end -->
 
+
     <!-- feature area start -->
-    <section class="feature-area pb-120">
+    <section id='menuKesehatan' class="feature-area pb-120">
         <div class="container feature-container">
-            <div class="row justify-content-center">
+            <div style="margin-bottom: 20px;" class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col-sm-10 text-center">
                     <div class="section-heading mb-70">
                         <h2 class="section-title shape">Our Features</h2>
@@ -172,11 +118,13 @@
                     </div>
                 </div>
             </div>
+            <!-- BMI Checking -->
             <div class="row justify-content-center mt-none-50">
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 mt-50 text-center">
+                <div style="margin-bottom: 10px;" class="col-xl-4 col-lg-6 col-md-6 col-sm-8 mt-50 text-center">
                     <div class="single-feature-box">
+
                         <div class="icon">
-                            <img src="assets/images/icons/feature-icon-01.png" alt="">
+                            <img style="max-width: 50%;" src="assets/images/bmi.png" alt="">
                         </div>
                         <div class="content">
                             <h3 class="title">BMI Checking</h3>
@@ -185,10 +133,11 @@
                         </div>
                     </div>
                 </div>
+                 <!-- Blood Pressure -->
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 mt-50 text-center">
                     <div class="single-feature-box">
                         <div class="icon">
-                            <img src="assets/images/icons/feature-icon-02.png" alt="">
+                            <img style="max-width: 50%;" src="assets/images/tekananDarah.png" alt="">
                         </div>
                         <div class="content">
                             <h3 class="title">Blood Pressure Checking</h3>
@@ -197,10 +146,11 @@
                         </div>
                     </div>
                 </div>
+                <!-- Blood Sugar -->
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 mt-50 text-center">
                     <div class="single-feature-box">
                         <div class="icon">
-                            <img src="assets/images/icons/feature-icon-03.png" alt="">
+                            <img style="max-width: 50%;" src="assets/images/gulaDarah.png" alt="">
                         </div>
                         <div class="content">
                             <h3 class="title">Blood Sugar Checking</h3>
@@ -210,11 +160,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center mt-50">
+            <!-- baris baru ke dua -->
+            <!-- Cholestrol  -->
+            <div style="margin-top: 20px;" class="row justify-content-center mt-50">
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 mt-50 text-center">
                     <div class="single-feature-box">
                         <div class="icon">
-                            <img src="assets/images/icons/feature-icon-01.png" alt="">
+                            <img style="max-width: 50%;" src="assets/images/kolestrol.png" alt="">
                         </div>
                         <div class="content">
                             <h3 class="title">Cholestrol Checking</h3>
@@ -223,10 +175,11 @@
                         </div>
                     </div>
                 </div>
+                <!-- AKG -->
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 mt-50 text-center">
                     <div class="single-feature-box">
                         <div class="icon">
-                            <img src="assets/images/icons/feature-icon-02.png" alt="">
+                            <img style="max-width: 50%;" src="assets/images/akg.png" alt="">
                         </div>
                         <div class="content">
                             <h3 class="title">AKG Checking</h3>
@@ -235,10 +188,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 mt-50 text-center">
+                <!-- <div class="col-xl-4 col-lg-6 col-md-6 col-sm-8 mt-50 text-center">
                     <div class="single-feature-box">
                         <div class="icon">
-                            <img src="assets/images/icons/feature-icon-03.png" alt="">
+                            <img src="assets/images/gulaDarah.png" alt="">
                         </div>
                         <div class="content">
                             <h3 class="title">Blood Sugar Checking</h3>
@@ -246,16 +199,32 @@
                                 or incididunt ut labore et dolore.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
     <!-- feature area end -->
 
-    <!-- about area start -->
-    <section class="department-area bg-2 pt-110 pb-110">
+    <!-- result untuk hasil -->
+    <section id='cekResult' style="padding-top:50px; padding-bottom:50px; background-color:rgb(253, 182, 182);" id="aboutUs" class="department-area bg-2 pt-110 pb-110">
         <div class="container">
             <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8 text-center">
+                    <div class="section-heading mb-70">
+                        <h2 class="section-title shape">Hasil kesehatan Kamu</h2>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp
+                            or incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- result selesai -->
+
+    <!-- about area start -->
+    <section style="padding-top:50px;  padding-bottom:50px" id="aboutUs" class="department-area bg-2 pt-110 pb-110">
+        <div class="container" style="padding-left: 70px;">
+            <div  class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 text-center">
                     <div class="section-heading mb-70">
                         <h2 class="section-title shape">About us</h2>
@@ -266,9 +235,9 @@
             </div>
             <div class="row mt-none-50">
                 <div class="col-xl-2 col-lg-6 col-md-6 ml-3 mt-50 text-center">
-                    <div class="single-department">
+                    <div class="single-department small-box">
                         <div class="thumb">
-                            <img src="assets/images/team/department-01.png" alt="">
+                            <img src="assets/images/about_us/Nurrakhman.png" alt="">
                             <span class="count bg-1">01</span>
                         </div>
                         <div class="content">
@@ -278,10 +247,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-4 col-md-4 ml-3 mt-50 text-center">
+                <div style="padding: 0px" class="col-xl-2 col-lg-4 col-md-4 ml-3 mt-50 text-center">
                     <div class="single-department small-box">
                         <div class="thumb">
-                            <img src="assets/images/team/department-02.png" alt="">
+                            <img src="assets/images/about_us/belum-ada.png" alt="">
                             <span class="count bg-2">02</span>
                         </div>
                         <div class="content">
@@ -291,10 +260,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-4 col-md-4 ml-3 mt-50 text-center">
-                    <div class="single-department">
+                <div style="padding: 0px" class="col-xl-2 col-lg-4 col-md-4 ml-3 mt-50 text-center">
+                    <div class="single-department small-box">
                         <div class="thumb">
-                            <img src="assets/images/team/department-03.png" alt="">
+                            <img src="assets/images/about_us/rosa.png" alt="">
                             <span class="count bg-3">03</span>
                         </div>
                         <div class="content">
@@ -304,10 +273,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-4 col-md-4 ml-3 mt-50 text-center">
+                <div style="padding: 0px" class="col-xl-2 col-lg-4 col-md-4 ml-3 mt-50 text-center">
                     <div class="single-department small-box">
                         <div class="thumb">
-                            <img src="assets/images/team/department-04.png" alt="">
+                            <img src="assets/images/about_us/belum-ada.png" alt="">
                             <span class="count bg-4">04</span>
                         </div>
                         <div class="content">
@@ -317,15 +286,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 col-lg-4 col-md-4 ml-3 mt-50 text-center">
-                    <div class="single-department">
+                <div style="padding: 0px" class="col-xl-2 col-lg-4 col-md-4 ml-3 mt-50 text-center">
+                    <div class="single-department small-box">
                         <div class="thumb">
-                            <img src="assets/images/team/department-03.png" alt="">
+                            <img src="assets/images/about_us/igna.png" alt="igna">
                             <span class="count bg-5">05</span>
                         </div>
                         <div class="content">
                             <h4 class="title">Igna</h4>
-                            <p>Lorem ipsum dolor sit amet, cons ectetur adipisicing elit, sed do eiusmod tempor incid.
+                            <p>Aku akan menjadi hokage dan memusnahkan klan Uchiha.
                             </p>
                         </div>
                     </div>
@@ -336,120 +305,10 @@
     <!-- about area end -->
 
     <!-- contact area start -->
-    <div class="contact-area pt-110 pb-110 bg_img" data-overlay="94"
-        data-background="assets/images/bg/contact-bg-1.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade active show" id="appointment" role="tabpanel"
-                                    aria-labelledby="appointment-tab">
-                                    <div class="contact-form">
-                                        <form action="https://themepure.net/template/medixer-prv/medixer/index.html">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <div class="form-group">
-                                                        <input type="text" placeholder="Enter your name">
-                                                        <span class="icon"><i class="fal fa-user"></i></span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-5">
-                                                    <div class="form-group">
-                                                        <input type="text" placeholder="Enter your email">
-                                                        <span class="icon"><i class="fal fa-envelope"></i></span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-3">
-                                                    <div class="form-group">
-                                                        <input type="text" placeholder="Enter age">
-                                                        <span class="icon"><i class="fal fa-calendar"></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <div class="form-group">
-                                                        <input type="tel" placeholder="Enter your phone number">
-                                                        <span class="icon"><i class="fal fa-phone"></i></span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <div class="form-group">
-                                                        <input type='text' class='has-icon datepicker-here'
-                                                            data-language='en' placeholder="Select Date">
-                                                        <span class="icon"><i class="fal fa-calendar-alt"></i></span>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-4">
-                                                    <div class="form-group">
-                                                        <input type="text" placeholder="Select Time">
-                                                        <span class="icon"><i class="fal fa-clock"></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <select name="subject">
-                                                            <option data-display="Select Department">Select Department
-                                                            </option>
-                                                            <option value="1">Body Sergery</option>
-                                                            <option value="2">Major Operation</option>
-                                                            <option value="3">Child Care</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group dr">
-                                                        <select name="subject">
-                                                            <option data-display="Select Expert/Doctor">Select
-                                                                Expert/Doctor</option>
-                                                            <option value="1">Dr. Dambul Ph</option>
-                                                            <option value="2">Dr. Rosalina Will</option>
-                                                            <option value="3">Dr. Jemilin D. William</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <textarea placeholder="Your message"></textarea>
-                                                        <span class="icon"><i class="fal fa-edit"></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row justify-content-center">
-                                                <div class="col-lg-4 text-center">
-                                                    <a href="contact.html" class="site-btn red">Make An Appointment</a>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <!-- contact area end -->
 
     <!-- footer start -->
     <footer class="site-footer pt-100 pb-80">
-        <div class="container">
-            <div class="row">
-                    <div class="row">
-                        <p class="center">Copyright 
-                            <a href="https://themepure.net/cdn-cgi/l/email-protection"></a>
-                            <span>Example</span> - 2020
-                        </p>
-                    </div>
-            </div>
-        </div>
     </footer>
     <!-- footer end -->
 
@@ -457,18 +316,18 @@
     <script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="assets/js/jquery-2.2.4.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/counterup.min.js"></script>
-    <script src="assets/js/datepicker.min.js"></script>
+    <!-- <script src="assets/js/counterup.min.js"></script> -->
+    <!-- <script src="assets/js/datepicker.min.js"></script>
     <script src="assets/js/datepicker.en.js"></script>
     <script src="assets/js/jquery-ui.min.js"></script>
     <script src="assets/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/lightcase.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script> -->
+    <!-- <script src="assets/js/jquery.meanmenu.min.js"></script>
     <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/waypoint.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script> -->
+    <!-- <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/waypoint.js"></script> -->
     <script src="assets/js/main.js"></script>
 </body>
 

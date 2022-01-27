@@ -63,7 +63,7 @@
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1500px) {
 	.mainmenu ul li:not(:first-child) {
-		margin-left: 35px;
+		margin-left: 200px;
 	}
 	.custom-header {
 		max-width: 1200px;
