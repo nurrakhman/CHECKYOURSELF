@@ -99,7 +99,6 @@ function calculateCholesterol(event){
     }else{
         output = `${name}  ${hasil}, Ayo perbaiki kesehatan mu`
     } 
-
     //UPFATE RESULT
     resultTxt.innerText = output;
 }
@@ -136,7 +135,6 @@ function bloodSugar(event){
 
     //MODUL FUNGSI
     let hasil = calculateBloodSugar(name, parseInt(age), parseInt(blood_sugar));
-    console.log(hasil);
     
     //UPDATE GAMBAR DOKTER
     if(hasil.status === "Terlalu Tinggi" || hasil.status === "Terlalu Rendah"){
@@ -153,7 +151,7 @@ function bloodSugar(event){
         output = `${name}, tekanan darah kamu ${hasil.status}, hati - hati kamu dapat mengidap ${hasil.risk}. Jaga pola makan kamu ya!`
     } 
 
-    //UPFATE RESULT
+    //UPDATE RESULT
     resultTxt.innerText = output;
 }
 // FUNGSICALCULATBLOODSUGAR
