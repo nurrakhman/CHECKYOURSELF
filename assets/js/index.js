@@ -280,3 +280,89 @@ function testBmi(weight, height) {
     result.BMI = Number(result.BMI)
     return result
 }
+
+/////////////////////// AKG ///////////////////////
+function calculateAKG(event) {
+    // Prevent refresh page
+    event.preventDefault();
+    //DOM Form
+    let name = document.getElementById("fnama-akg").value;
+    let gender = document.querySelector('input[name=gender-akg]:checked').value;
+    let weight = document.getElementById("fweight-akg").value;
+    let height = document.getElementById("fheight-akg").value;
+    let age = document.getElementById("fage-akg").value;
+    let intensity = document.querySelector('input[name=intensity-akg]:checked').value;
+    //DOM Tampilan
+    let resultTxt = document.getElementById("result-akg");
+    let dokter = document.getElementById("dokter-akg")
+
+    // console.log(name, gender, weight, height, age, intensity)
+
+    //VALIDASI KOSONG TIDAK ?
+    if (!name || !weight || !height || !age) {
+        alert("Mohon lengkapi semua data terdahulu");
+        return
+    }
+
+
+
+    //MODUL FUNGSI
+    let hasil = akg(name, gender, parseInt(weight), parseInt(height), parseInt(age), parseInt(intensity));
+
+    //UPDATE GAMBAR DOKTER
+    if (name === name) {
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+    }
+
+    // //SETTING OUTPUT
+    let output = hasil
+    // //UPFATE RESULT
+    resultTxt.innerText = output;
+}
+
+//FUNGSI AKG
+function akg(name, gender, weight, height, age, intensity) {
+    // source: https://www.sehatq.com/artikel/memahami-angka-kecukupan-gizi-dan-cara-memenuhinya
+    let result = {};
+    let calorie = 0;
+    let intensityIndex = 0;
+
+    if (gender === 'perempuan') { // female
+        calorie += 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
+    } else { // male
+        calorie += 66 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
+    }
+
+    // workout intensity
+    switch (intensity) {
+        case 1:
+            intensityIndex += 1.2;
+            break;
+        case 2:
+            intensityIndex += 1.375;
+            break;
+        case 3:
+            intensityIndex += 1.55;
+            break;
+        case 4:
+            intensityIndex += 1.725;
+            break;
+        case 5:
+            intensityIndex += 1.9;
+            break;
+        default:
+            break;
+    }
+
+    // calorie needed
+    const calorieNeeded = Math.floor(calorie * intensityIndex);
+
+    // calculate protein, karbohidrat, lemak
+    const protein = Math.floor((0.15 * calorieNeeded) / 4)
+    const karbohidrat = Math.floor((0.60 * calorieNeeded) / 4)
+    const lemak = Math.floor((0.15 * calorieNeeded) / 9)
+
+    result = `Hai ${name}, kebutuhan kalori kamu perhari adalah ${calorieNeeded} Kkal, dengan kombinasi kandungan nutrisi yang dianjurkan adalah protein ${protein} gr, karbohidrat ${karbohidrat} gr dan lemak ${lemak} gr!`
+
+    return result;
+}

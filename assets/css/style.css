@@ -615,3 +615,8 @@ aside {
     align-items: center;
     justify-content: center;
   }
+
+  .likert li {
+    float: left;
+    list-style-type: none;
+  }
