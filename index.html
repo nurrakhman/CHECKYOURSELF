@@ -203,7 +203,46 @@
         </div>
       </div>
     </div>
-
+    <div class="test-content bmi">
+      <div class="form">
+        <h1>BMI Calculator:</h1>
+        <form>
+          <label for="fnama-bmi">Nama: </label>
+          <input
+            type="text"
+            id="fnama-bmi"
+            name="nama-bmi"
+            placeholder="Nama anda"
+            required
+          />
+          <label for="fweight">Weight: </label>
+          <input
+            type="text"
+            id="fweight"
+            name="weight"
+            placeholder="Nilai weight anda"
+            required
+          />
+          <label for="fheight">Height: </label>
+          <input
+            type="text"
+            id="fheight"
+            name="height"
+            placeholder="Nilai height anda"
+            required
+          />
+          <button onclick="calculateBmi(event)" class="process">
+            Proses
+          </button>
+        </form>
+      </div>
+      <div class="result">
+        <img id="dokter-bmi" src="berpikir.jpg" alt="" />
+        <div class="result-info">
+          <p id="result-bmi">Silahkan masukan data...</p>
+        </div>
+      </div>
+    </div>
     <footer id="footer">
       <div class="container-footer">
         <div class="icon-footer">

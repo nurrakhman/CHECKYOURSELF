@@ -1,4 +1,4 @@
-export default function bmi(weight,height) {
+function bmi(weight,height) {
   let mass = weight/(height*height); 
   // console.log(mass);
   let result = {
