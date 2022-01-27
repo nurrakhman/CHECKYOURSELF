@@ -1,4 +1,4 @@
-const value = (gender, weight, height, age, intensity) => {
+function akg(gender, weight, height, age, intensity) {
     // source: https://www.sehatq.com/artikel/memahami-angka-kecukupan-gizi-dan-cara-memenuhinya
     let result;
     let calorie = 0;
@@ -44,7 +44,7 @@ const value = (gender, weight, height, age, intensity) => {
     return result;
 }
 
-// console.log(akg(false, 75, 168, 28, 2)) // Kebutuhan protein Anda 49 gram, karbohidrat 197 gram, dan lemak 21 gram dalam sehari
-// console.log(akg(true, 50, 155, 24, 1)) // Kebutuhan protein Anda 58 gram, karbohidrat 234 gram, dan lemak 26 gram dalam sehari
+console.log(akg(false, 75, 168, 28, 2)) // Kebutuhan protein Anda 49 gram, karbohidrat 197 gram, dan lemak 21 gram dalam sehari
+console.log(akg(true, 50, 155, 24, 1)) // Kebutuhan protein Anda 58 gram, karbohidrat 234 gram, dan lemak 26 gram dalam sehari
 
 exports.value = value;
