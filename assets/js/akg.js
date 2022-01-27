@@ -1,12 +1,12 @@
-const value = (gender, weight, height, age, intensity) => {
+function akg(name, gender, weight, height, age, intensity) {
     // source: https://www.sehatq.com/artikel/memahami-angka-kecukupan-gizi-dan-cara-memenuhinya
-    let result;
+    let result = {};
     let calorie = 0;
     let intensityIndex = 0;
     
-    if (gender === true) { // female
+    if (gender === 'perempuan') { // female
         calorie += 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
-    } else { // gender === false = male
+    } else { // male
         calorie += 66 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
     }
 
@@ -39,12 +39,10 @@ const value = (gender, weight, height, age, intensity) => {
     const karbohidrat = Math.floor((0.60 * calorieNeeded) / 4)
     const lemak = Math.floor((0.15 * calorieNeeded) / 9)
 
-    result = `Kebutuhan protein Anda ${protein} gram, karbohidrat ${karbohidrat} gram, dan lemak ${lemak} gram dalam sehari`
+    result = `Hai ${name}, kebutuhan kalori kamu perhari adalah ${calorieNeeded} Kkal, dengan kombinasi kandungan nutrisi yang dianjurkan adalah protein ${protein} gram, karbohidrat ${karbohidrat} gram, dan lemak ${lemak} gram!`
 
     return result;
 }
 
-// console.log(akg(false, 75, 168, 28, 2)) // Kebutuhan protein Anda 49 gram, karbohidrat 197 gram, dan lemak 21 gram dalam sehari
-// console.log(akg(true, 50, 155, 24, 1)) // Kebutuhan protein Anda 58 gram, karbohidrat 234 gram, dan lemak 26 gram dalam sehari
-
-exports.value = value;
+console.log(akg('Joker', 'laki-laki', 75, 168, 28, 3)) // Hai Joker, kebutuhan kalori kamu perhari adalah 1483 Kkal, dengan kombinasi kandungan nutrisi yang dianjurkan adalah protein 55 gram, karbohidrat 222 gram, dan lemak 24 gram!
+console.log(akg('Nene', 'perempuan', 50, 155, 24, 4)) // Hai Nene, kebutuhan kalori kamu perhari adalah 2244 Kkal, dengan kombinasi kandungan nutrisi yang dianjurkan adalah protein 84 gram, karbohidrat 336 gram, dan lemak 37 gram!

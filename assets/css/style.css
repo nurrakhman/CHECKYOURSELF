@@ -576,6 +576,11 @@ aside {
     color: white;
     /* background: cornflowerblue; */
   }
+
+  .likert li {
+    float: left;
+    list-style-type: none;
+  }
   
   .process {
     margin-top: auto;
