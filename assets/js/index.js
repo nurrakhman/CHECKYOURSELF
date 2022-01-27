@@ -27,9 +27,9 @@ function calculateBloodpressure(event) {
 
     //UPDATE GAMBAR DOKTER
     if (hasil.status === "Tekanan darah Tinggi" || hasil.status === "Tekanan darah Rendah") {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
     } else {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
     }
 
     //SETTING OUTPUT
@@ -87,9 +87,9 @@ function calculateCholesterol(event) {
 
     //UPDATE GAMBAR DOKTER
     if (hasil === "kadar kolestrol kamu terlalu tinggi" || hasil === "kadar kolestrol kamu tidak normal") {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
     } else {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
     }
 
     //SETTING OUTPUT
@@ -139,9 +139,9 @@ function bloodSugar(event) {
 
     //UPDATE GAMBAR DOKTER
     if (hasil.status === "Terlalu Tinggi" || hasil.status === "Terlalu Rendah") {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
     } else {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
     }
 
     //SETTING OUTPUT
@@ -231,9 +231,9 @@ function calculateBmi(event) {
     // console.log(weight +'_'+ height);
     //UPDATE GAMBAR DOKTER
     if (hasil.BMI > 18.5 && hasil.BMI <= 24.9) {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
     } else {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/cemas.jpg";
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
     }
 
     //SETTING OUTPUT
@@ -311,7 +311,7 @@ function calculateAKG(event) {
 
     //UPDATE GAMBAR DOKTER
     if (name === name) {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
     }
 
     // //SETTING OUTPUT
