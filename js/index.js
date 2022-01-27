@@ -58,7 +58,7 @@ const bloodPressure = (diastolik, sistolik) => {
         output.risk = "Serangan Jantung, Gagal Ginjal, Gagal Jantung";
     }else if(MAP < 60){
         output.status = "Tekanan darah Rendah";
-        output.risk = ["Stroke, Pendarahan Dalam, Sepsis"]
+        output.risk = "Stroke, Pendarahan Dalam, Sepsis";
     }else {
         output.status = "normal";
     }
@@ -85,7 +85,6 @@ function calculateCholesterol(event){
 
     //MODUL FUNGSI
     let hasil = cholesterol(parseInt(kolesterol), bp);
-    console.log(bp);
     
     //UPDATE GAMBAR DOKTER
     if(hasil === "kadar kolestrol kamu terlalu tinggi" || hasil === "kadar kolestrol kamu tidak normal"){
