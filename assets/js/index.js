@@ -203,54 +203,48 @@ function calculateAKG(event){
     // Prevent refresh page
     event.preventDefault();
     //DOM Form
-    let name = document.getElementById("name-akg").value;
-    let gender = document.getElementById("gender-akg").value;
-    let weight = document.getElementById("weight-akg").value;
-    let height = document.getElementById("height-akg").value;
-    let age = document.getElementById("age-akg").value;
-    let intensity = document.getElementById("intensity-akg").value;
+    let name = document.getElementById("fnama-akg").value;
+    let gender = document.querySelector('input[name=gender-akg]:checked').value;
+    let weight = document.getElementById("fweight-akg").value;
+    let height = document.getElementById("fheight-akg").value;
+    let age = document.getElementById("fage-akg").value;
+    let intensity = document.querySelector('input[name=intensity-akg]:checked').value;
     //DOM Tampilan
     let resultTxt = document.getElementById("result-akg");
     let dokter = document.getElementById("dokter-akg")
 
+    // console.log(name, gender, weight, height, age, intensity)
+
     //VALIDASI KOSONG TIDAK ?
-    if(!name || !gender || !weight || !height || !age || !intensity){
+    if(!name || !weight || !height || !age){
         alert("Mohon lengkapi semua data terdahulu");
         return
     }
 
     //MODUL FUNGSI
-    let hasil = akg(gender, weight, height, age, intensity);
+    let hasil = akg(name, gender, parseInt(weight), parseInt(height), parseInt(age), parseInt(intensity));
     
     //UPDATE GAMBAR DOKTER
-    // if(hasil === "kadar kolestrol kamu terlalu tinggi" || hasil === "kadar kolestrol kamu tidak normal"){
-    //     dokter.src= "../cemas.jpg";
-    // }else{
-    //     dokter.src= "../senang.jpg";
-    // }
+    if(name === name){
+        dokter.src= "https://nurrakhman.github.io/CHECKYOURSELF/assets/senang.jpg";
+    }
 
     // //SETTING OUTPUT
-    // let output;
-    // if(hasil === "kadar kolestrol kamu normal"){
-    //     output = `${name}  ${hasil}, Jaga terus ya kesehatan mu`
-    // }else{
-    //     output = `${name}  ${hasil}, Ayo perbaiki kesehatan mu`
-    // } 
-
+    let output = hasil
     // //UPFATE RESULT
-    // resultTxt.innerText = output;
+    resultTxt.innerText = output;
 }
 
 //FUNGSI AKG
-function akg(gender, weight, height, age, intensity) {
+function akg(name, gender, weight, height, age, intensity) {
     // source: https://www.sehatq.com/artikel/memahami-angka-kecukupan-gizi-dan-cara-memenuhinya
     let result = {};
     let calorie = 0;
     let intensityIndex = 0;
     
-    if (gender === true) { // female
+    if (gender === 'perempuan') { // female
         calorie += 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
-    } else { // gender === false = male
+    } else { // male
         calorie += 66 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
     }
 
@@ -283,14 +277,9 @@ function akg(gender, weight, height, age, intensity) {
     const karbohidrat = Math.floor((0.60 * calorieNeeded) / 4)
     const lemak = Math.floor((0.15 * calorieNeeded) / 9)
 
-    result = `Kebutuhan protein Anda ${protein} gram, karbohidrat ${karbohidrat} gram, dan lemak ${lemak} gram dalam sehari`
-
-    // result.protein = protein
-    // result.karbohidrat = karbohidrat
-    // result.lemak = lemak
+    result = `Hai ${name}, kebutuhan kalori kamu perhari adalah ${calorieNeeded} Kkal, dengan kombinasi kandungan nutrisi yang dianjurkan adalah protein ${protein} gram, karbohidrat ${karbohidrat} gram, dan lemak ${lemak} gram!`
 
     return result;
 }
 
-console.log(akg(false, 75, 168, 28, 2)) // Kebutuhan protein Anda 49 gram, karbohidrat 197 gram, dan lemak 21 gram dalam sehari
-console.log(akg(true, 50, 155, 24, 1)) // Kebutuhan protein Anda 58 gram, karbohidrat 234 gram, dan lemak 26 gram dalam sehari
+// console.log(akg('Joker', 'laki-laki', 75, 168, 28, 3)) // Hai Joker, kebutuhan kalori kamu perhari adalah 1483 Kkal, dengan kombinasi kandungan nutrisi yang dianjurkan adalah protein 55 gram, karbohidrat 222 gram, dan lemak 24 gram!
