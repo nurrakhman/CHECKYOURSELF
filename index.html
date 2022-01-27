@@ -101,98 +101,181 @@
     </div>
   </main>
 
+<section id="form-checking">
+  <!-- BMI AREA Start-->
+  <section class="blood-sugar pt-100 pb-100">
 
-  <div class="container">
-
-    <div class="test-content bp">
-      <div class="form">
-        <h5 class="text-center" style="margin-top: 40px;">Check your blood pressure here</h5>
-        <form>
-          <div class="form-group">
-            <input type="text" class="form-control" id="fnama-bp" name="nama-bp" placeholder="Enter your name"
-              required />
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="basic-check">
+            <h2 class="text-center mb-60">Checking BMI</h2>
+            <form action="#">
+              <!-- <input type="text" id="fnama-bs" class="form-control mt-3" name="fnama-bs" placeholder="Masukkan nama anda"
+                  required />
+                <input type="number" id="age-bs" class="form-control" name="age-bs" placeholder="Masukkan umur anda" />
+                <input type="number" id="blood-sugar-bs" class="form-control" name="blood-sugar-bs"
+                  placeholder="Masukkan gula darah anda" />
+                <button class="site-btn red w-100" onclick="bloodSugar(event)" class="process">Check</button> -->
+            </form>
           </div>
-          <div class="form-group">
-            <input type="number" class="form-control" id="fdiastolik" name="diastolik"
-              placeholder="Nilai diastolik anda" required />
+        </div>
+        <div class="col-lg-6 mt-lg-5">
+          <div class="result">
+            <img id="dokter-bs" src="assets/berpikir.jpg" alt="" />
+            <div class="result-info">
+              <p id="result-bs">Silahkan masukan data...</p>
+            </div>
           </div>
-          <div class="form-group">
-            <input type="number" class="form-control" id="fsistolik" name="sistolik" placeholder="Nilai sistolik anda"
-              required />
-          </div>
-          <button class="btn btn-primary mb-2" onclick="calculateBloodpressure(event)" class="process">
-            Proses
-          </button>
-        </form>
-      </div>
-      <div class="result">
-        <img id="dokter-bp" src="assets/berpikir.jpg" alt="" />
-        <div class="result-info">
-          <p id="result-bp">Silahkan masukan data...</p>
         </div>
       </div>
+
     </div>
 
-
-
-    <div class="test-content cole">
-      <div class="form">
-        <h5 style="margin-top: 40px;">Kolesterol</h5>
-        <form>
-          <div class="form-group">
-            <input type="text" id="fnama-cole" class="form-control" name="fnama-cole" placeholder="Nama anda" required />
+  </section>
+  <!-- BMI AREA End-->
+  <!-- Blood pressure area Start-->
+  <section class="blood-pressure pt-100 pb-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="basic-check">
+            <h2 class="text-center mb-60">Checking Blood Pressure</h2>
+            <form action="#">
+              <div class="form-group">
+                <input type="text" class="form-control" id="fnama-bp" name="nama-bp" placeholder="Enter your name"
+                  required />
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" id="fdiastolik" name="diastolik"
+                  placeholder="Nilai diastolik anda" required />
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" id="fsistolik" name="sistolik"
+                  placeholder="Nilai sistolik anda" required />
+              </div>
+              <button class="site-btn red w-100" onclick="calculateBloodpressure(event)" class="process">Check</button>
+            </form>
           </div>
-          <div class="form-group">
-            <input type="number" id="fkolesterol" class="form-control" name="fkolesterol" placeholder="Nilai Kolesterol anda" />
+        </div>
+        <div class="col-lg-6 mt-lg-5">
+          <div class="result">
+            <img id="dokter-bp" src="assets/berpikir.jpg" alt="" />
+            <div class="result-info">
+              <p id="result-bp">Silahkan masukan data...</p>
+            </div>
           </div>
-          <div class="form-group">
-            <select id="fbloop" name="fbloop" class="form-control">
-              <option value="tinggi">Tekanan Darah Tinggi</option>
-              <option value="normal">Tekanan Darah Normal</option>
-              <option value="rendah">Tekanan Darah Rendah</option>
-            </select>
-          </div>
-          <button class="btn btn-primary mb-2" onclick="calculateCholesterol(event)" class="process">
-            Proses
-          </button>
-        </form>
-      </div>
-      <div class="result">
-        <img id="dokter-cole" src="assets/berpikir.jpg" alt="" />
-        <div class="result-info">
-          <p id="result-cole">Silahkan masukan data...</p>
         </div>
       </div>
-    </div>
 
-    <div class="test-content bs">
-      <div class="form">
-        <h5 style="margin-top: 40px;">Blood Sugar</h5>
-        <form>
-          <div class="form-group">
-            <input type="text" id="fnama-bs" class="form-control" name="fnama-bs" placeholder="Nama anda" required />
+    </div>
+  </section>
+  <!-- Blood pressure area End-->
+
+  <!-- Cholestrol area Start-->
+  <section class="cholestrol pt-100 pb-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="basic-check">
+            <h2 class="text-center mb-60">Checking Cholestrol</h2>
+            <form action="#">
+              <input type="text" id="fnama-cole" class="form-control" name="fnama-cole" placeholder="Nama anda"
+                required />
+              <input type="number" id="fkolesterol" class="form-control" name="fkolesterol"
+                placeholder="Nilai Kolesterol anda" />
+              <div class="form-group">
+                <select id="fbloop" name="fbloop" class="form-control">
+                  <option value="tinggi">Masukkan Tekanan Darah</option>
+                  <option value="tinggi">Tekanan Darah Tinggi</option>
+                  <option value="normal">Tekanan Darah Normal</option>
+                  <option value="rendah">Tekanan Darah Rendah</option>
+                </select>
+              </div>
+              <button class="site-btn red w-100" onclick="calculateCholesterol(event)" class="process">Check</button>
+            </form>
           </div>
-          <div class="form-group">
-            <input type="number" id="age-bs" class="form-control" name="age-bs" placeholder="Enter your age" />
+        </div>
+        <div class="col-lg-6 mt-lg-5">
+          <div class="result">
+            <img id="dokter-cole" src="assets/berpikir.jpg" alt="" />
+            <div class="result-info">
+              <p id="result-cole">Silahkan masukan data...</p>
+            </div>
           </div>
-          <div class="form-group">
-            <input type="number" id="blood-sugar-bs" class="form-control" name="blood-sugar-bs" placeholder="Enter your blood sugar" />
-          </div>
-          <button class="btn btn-primary mb-2" onclick="bloodSugar(event)" class="process">
-            Proses
-          </button>
-        </form>
-      </div>
-      <div class="result">
-        <img id="dokter-bs" src="assets/berpikir.jpg" alt="" />
-        <div class="result-info">
-          <p id="result-bs">Silahkan masukan data...</p>
         </div>
       </div>
+
+    </div>
+  </section>
+  <!-- Cholestrol area End-->
+
+  <!-- Blood sugar area Start-->
+  <section class="blood-sugar pt-100 pb-100">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="basic-check">
+            <h2 class="text-center mb-60">Checking Blood Sugar</h2>
+            <form action="#">
+              <input type="text" id="fnama-bs" class="form-control mt-3" name="fnama-bs"
+                placeholder="Masukkan nama anda" required />
+              <input type="number" id="age-bs" class="form-control" name="age-bs" placeholder="Masukkan umur anda" />
+              <input type="number" id="blood-sugar-bs" class="form-control" name="blood-sugar-bs"
+                placeholder="Masukkan gula darah anda" />
+              <button class="site-btn red w-100" onclick="bloodSugar(event)" class="process">Check</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-lg-5">
+          <div class="result">
+            <img id="dokter-bs" src="assets/berpikir.jpg" alt="" />
+            <div class="result-info">
+              <p id="result-bs">Silahkan masukan data...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
+  </section>
+  <!-- Blood sugar area End-->
 
-  </div>
+  <!-- Akg area Start-->
+  <section class="akg pt-100 pb-100">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="basic-check">
+            <h2 class="text-center mb-60">Checking AKG</h2>
+            <form action="#">
+              <!-- <input type="text" id="fnama-bs" class="form-control mt-3" name="fnama-bs" placeholder="Masukkan nama anda"
+                required />
+              <input type="number" id="age-bs" class="form-control" name="age-bs" placeholder="Masukkan umur anda" />
+              <input type="number" id="blood-sugar-bs" class="form-control" name="blood-sugar-bs"
+                placeholder="Masukkan gula darah anda" />
+              <button class="site-btn red w-100" onclick="bloodSugar(event)" class="process">Check</button> -->
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-lg-5">
+          <div class="result">
+            <img id="dokter-bs" src="assets/berpikir.jpg" alt="" />
+            <div class="result-info">
+              <p id="result-bs">Silahkan masukan data...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Akg area End-->
+</section>
 
   <footer id="footer">
     <div class="container-footer">
