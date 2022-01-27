@@ -197,3 +197,100 @@ const calculateBloodSugar = (ageParams, bloodPressureParams) => {
     }
     return result
 }
+
+/////////////////////// AKG ///////////////////////
+function calculateAKG(event){
+    // Prevent refresh page
+    event.preventDefault();
+    //DOM Form
+    let name = document.getElementById("name-akg").value;
+    let gender = document.getElementById("gender-akg").value;
+    let weight = document.getElementById("weight-akg").value;
+    let height = document.getElementById("height-akg").value;
+    let age = document.getElementById("age-akg").value;
+    let intensity = document.getElementById("intensity-akg").value;
+    //DOM Tampilan
+    let resultTxt = document.getElementById("result-akg");
+    let dokter = document.getElementById("dokter-akg")
+
+    //VALIDASI KOSONG TIDAK ?
+    if(!name || !gender || !weight || !height || !age || !intensity){
+        alert("Mohon lengkapi semua data terdahulu");
+        return
+    }
+
+    //MODUL FUNGSI
+    let hasil = akg(gender, weight, height, age, intensity);
+    
+    //UPDATE GAMBAR DOKTER
+    // if(hasil === "kadar kolestrol kamu terlalu tinggi" || hasil === "kadar kolestrol kamu tidak normal"){
+    //     dokter.src= "../cemas.jpg";
+    // }else{
+    //     dokter.src= "../senang.jpg";
+    // }
+
+    // //SETTING OUTPUT
+    // let output;
+    // if(hasil === "kadar kolestrol kamu normal"){
+    //     output = `${name}  ${hasil}, Jaga terus ya kesehatan mu`
+    // }else{
+    //     output = `${name}  ${hasil}, Ayo perbaiki kesehatan mu`
+    // } 
+
+    // //UPFATE RESULT
+    // resultTxt.innerText = output;
+}
+
+//FUNGSI AKG
+function akg(gender, weight, height, age, intensity) {
+    // source: https://www.sehatq.com/artikel/memahami-angka-kecukupan-gizi-dan-cara-memenuhinya
+    let result = {};
+    let calorie = 0;
+    let intensityIndex = 0;
+    
+    if (gender === true) { // female
+        calorie += 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
+    } else { // gender === false = male
+        calorie += 66 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
+    }
+
+    // workout intensity
+    switch (intensity) {
+        case 1:
+            intensityIndex += 1.2;
+            break;
+        case 2:
+            intensityIndex += 1.375;
+            break;
+        case 3:
+            intensityIndex += 1.55;
+            break;
+        case 4:
+            intensityIndex += 1.725;
+            break;
+        case 5:
+            intensityIndex += 1.9;
+            break;
+        default:
+            break;
+    }
+
+    // calorie needed
+    const calorieNeeded = Math.floor(calorie * intensityIndex);
+
+    // calculate protein, karbohidrat, lemak
+    const protein = Math.floor((0.15 * calorieNeeded) / 4)
+    const karbohidrat = Math.floor((0.60 * calorieNeeded) / 4)
+    const lemak = Math.floor((0.15 * calorieNeeded) / 9)
+
+    result = `Kebutuhan protein Anda ${protein} gram, karbohidrat ${karbohidrat} gram, dan lemak ${lemak} gram dalam sehari`
+
+    // result.protein = protein
+    // result.karbohidrat = karbohidrat
+    // result.lemak = lemak
+
+    return result;
+}
+
+console.log(akg(false, 75, 168, 28, 2)) // Kebutuhan protein Anda 49 gram, karbohidrat 197 gram, dan lemak 21 gram dalam sehari
+console.log(akg(true, 50, 155, 24, 1)) // Kebutuhan protein Anda 58 gram, karbohidrat 234 gram, dan lemak 26 gram dalam sehari
