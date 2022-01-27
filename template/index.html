@@ -115,16 +115,8 @@
                             <ul style="margin-left: 250px">
                                 <li><a href="#0">Home +</a>
                                 </li>
-                                <li><a href="#">Features +</a>
-                                    <ul class="sub-menu">
-                                        <li><a href="#">Check Your BMI</a></li>
-                                        <li><a href="#">Check Your Blood Pressure</a></li>
-                                        <li><a href="#">Check Your Blood Sugar</a></li>
-                                        <li><a href="#">Check Your Cholestrol</a></li>
-                                        <li><a href="#">Check Your AKG</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">About Us +</a>
+                                <li><a href="#features">Features +</a></li>
+                                <li><a href="#about">About Us +</a>
                                 </li>
                             </ul>
                         </nav>
@@ -161,7 +153,7 @@
     <!-- Hero area end -->
 
     <!-- feature area start -->
-    <section class="feature-area pb-120">
+    <section class="feature-area pb-120" id="features">
         <div class="container feature-container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 col-sm-10 text-center">
@@ -253,7 +245,7 @@
     <!-- feature area end -->
 
     <!-- about area start -->
-    <section class="department-area bg-2 pt-110 pb-110">
+    <section class="department-area bg-2 pt-110 pb-110" id="about">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8 text-center">
@@ -335,7 +327,7 @@
     </section>
     <!-- about area end -->
 
-    <!-- contact area start -->
+    <!-- form akg area start -->
     <div class="contact-area pt-110 pb-110 bg_img" data-overlay="94"
         data-background="assets/images/bg/contact-bg-1.jpg">
         <div class="container">
@@ -347,83 +339,55 @@
                                 <div class="tab-pane fade active show" id="appointment" role="tabpanel"
                                     aria-labelledby="appointment-tab">
                                     <div class="contact-form">
-                                        <form action="https://themepure.net/template/medixer-prv/medixer/index.html">
+                                        <h3 class="text-center mb-60">Check your AKG  here</h3>
+                                        <form action="#">
                                             <div class="row">
-                                                <div class="col-lg-4">
-                                                    <div class="form-group">
-                                                        <input type="text" placeholder="Enter your name">
-                                                        <span class="icon"><i class="fal fa-user"></i></span>
-                                                    </div>
-                                                </div>
                                                 <div class="col-lg-5">
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Enter your email">
-                                                        <span class="icon"><i class="fal fa-envelope"></i></span>
+                                                        <input type="text" placeholder="Enter your name">
+                                                        <span class="icon"><i class="fas fa-venus-mars"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <select name="gender">
+                                                            <option data-display="Select Gender">Select Gender
+                                                            </option>
+                                                            <option value="true">Female</option>
+                                                            <option value="false">Male</option>
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-3">
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Enter age">
-                                                        <span class="icon"><i class="fal fa-calendar"></i></span>
+                                                        <input type="number" placeholder="Enter your age">
+                                                        <span class="icon"><i class="fas fa-child"></i><span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
-                                                        <input type="tel" placeholder="Enter your phone number">
-                                                        <span class="icon"><i class="fal fa-phone"></i></span>
+                                                        <input type="number" placeholder="Enter your weight">
+                                                        <span class="icon"><i class="fas fa-weight"></i></span>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
-                                                        <input type='text' class='has-icon datepicker-here'
-                                                            data-language='en' placeholder="Select Date">
-                                                        <span class="icon"><i class="fal fa-calendar-alt"></i></span>
+                                                        <input type='number'placeholder="Enter your height">
+                                                        <span class="icon"><i class="fas fa-arrows-alt-v"></i></span>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-4">
                                                     <div class="form-group">
-                                                        <input type="text" placeholder="Select Time">
-                                                        <span class="icon"><i class="fal fa-clock"></i></span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <div class="form-group">
-                                                        <select name="subject">
-                                                            <option data-display="Select Department">Select Department
-                                                            </option>
-                                                            <option value="1">Body Sergery</option>
-                                                            <option value="2">Major Operation</option>
-                                                            <option value="3">Child Care</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                                <div class="col-lg-6">
-                                                    <div class="form-group dr">
-                                                        <select name="subject">
-                                                            <option data-display="Select Expert/Doctor">Select
-                                                                Expert/Doctor</option>
-                                                            <option value="1">Dr. Dambul Ph</option>
-                                                            <option value="2">Dr. Rosalina Will</option>
-                                                            <option value="3">Dr. Jemilin D. William</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div class="form-group">
-                                                        <textarea placeholder="Your message"></textarea>
-                                                        <span class="icon"><i class="fal fa-edit"></i></span>
+                                                        <input type="number" placeholder="Enter your intensity">
+                                                        <span class="icon"><i class="fas fa-wheelchair"></i></span>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="row justify-content-center">
                                                 <div class="col-lg-4 text-center">
-                                                    <a href="contact.html" class="site-btn red">Make An Appointment</a>
+                                                    <a href="#" class="site-btn red">Submit</a>
                                                 </div>
                                             </div>
                                         </form>
@@ -436,7 +400,212 @@
             </div>
         </div>
     </div>
-    <!-- contact area end -->
+    <!-- form akg area end -->
+
+    <!-- form blood sugar area start -->
+    <div class="contact-area pt-110 pb-110 bg_img" data-overlay="94"
+        data-background="assets/images/bg/contact-bg-1.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade active show" id="appointment" role="tabpanel"
+                                    aria-labelledby="appointment-tab">
+                                    <div class="contact-form">
+                                        <h3 class="text-center mb-60">Check your blood sugar here</h3>
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    <div class="form-group">
+                                                        <input type="text" id="name" name="name" placeholder="Enter your name">
+                                                        <span class="icon"><i class="fas fa-venus-mars"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <input type="number" id="name" name="age" placeholder="Enter your age">
+                                                        <span class="icon"><i class="fas fa-child"></i><span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <input name="blood_sugar" id="blood_sugar" type="number" placeholder="Enter your blood sugar">
+                                                        <span class="icon"><i class="fas fa-cookie-bite"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-4 text-center">
+                                                    <a href="#" class="site-btn red">Submit</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- form blood sugar area end -->
+
+    <!-- form blood pressure area start -->
+    <div class="contact-area pt-110 pb-110 bg_img" data-overlay="94"
+        data-background="assets/images/bg/contact-bg-1.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade active show" id="appointment" role="tabpanel"
+                                    aria-labelledby="appointment-tab">
+                                    <div class="contact-form">
+                                        <h3 class="text-center mb-60">Check your blood pressure here</h3>
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="col-lg-5">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter your name">
+                                                        <span class="icon"><i class="fas fa-venus-mars"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-3">
+                                                    <div class="form-group">
+                                                        <input type="number" placeholder="Enter your diastolik">
+                                                        <span class="icon"><i class="fas fa-heartbeat"></i><span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <input type="number" placeholder="Enter your sistolik">
+                                                        <span class="icon"><i class="fas fa-file-medical-alt"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-4 text-center">
+                                                    <a href="#" class="site-btn red">Submit</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- form blood pressure area end -->
+
+
+    <!-- form BMI area start -->
+    <div class="contact-area pt-110 pb-110 bg_img" data-overlay="94"
+        data-background="assets/images/bg/contact-bg-1.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade active show" id="appointment" role="tabpanel"
+                                    aria-labelledby="appointment-tab">
+                                    <div class="contact-form">
+                                        <h3 class="text-center mb-60">Check your BMI here</h3>
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter your name">
+                                                        <span class="icon"><i class="fas fa-venus-mars"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <input type="number" placeholder="Enter your weight">
+                                                        <span class="icon"><i class="fas fa-weight"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <input type='number'placeholder="Enter your height">
+                                                        <span class="icon"><i class="fas fa-arrows-alt-v"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-4 text-center">
+                                                    <a href="#" class="site-btn red">Submit</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- form BMI area end -->
+
+    <!-- form cholestrol area start -->
+    <div class="contact-area pt-110 pb-110 bg_img" data-overlay="94"
+        data-background="assets/images/bg/contact-bg-1.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade active show" id="appointment" role="tabpanel"
+                                    aria-labelledby="appointment-tab">
+                                    <div class="contact-form">
+                                        <h3 class="text-center mb-60">Check your Cholestrol here</h3>
+                                        <form action="#">
+                                            <div class="row">
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="Enter your name">
+                                                        <span class="icon"><i class="fas fa-venus-mars"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <input type="number" placeholder="Enter your cholesterol level">
+                                                        <span class="icon"><i class="fas fa-heartbeat"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-4">
+                                                    <div class="form-group">
+                                                        <input type='number'placeholder="Enter your blood pressure">
+                                                        <span class="icon"><i class="fas fa-heartbeat"></i></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row justify-content-center">
+                                                <div class="col-lg-4 text-center">
+                                                    <a href="#" class="site-btn red">Submit</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- form cholestrol area end -->
 
     <!-- footer start -->
     <footer class="site-footer pt-100 pb-80">
