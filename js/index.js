@@ -17,6 +17,12 @@ function calculateBloodpressure(event){
         return
     }
 
+    //VALIDASI NILAI
+    if(parseInt(diastolik) > parseInt(sistolik)){
+        alert("angka sistolik harus lebih besar dari diastolik");
+        return
+    }
+
     //MODUL FUNGSI
     let hasil = bloodPressure(parseInt(diastolik),parseInt(sistolik));
     
@@ -49,10 +55,10 @@ const bloodPressure = (diastolik, sistolik) => {
     }
     if(MAP > 100){
         output.status = "Tekanan darah Tinggi";
-        output.risk = ["Serangan Jantung", "Gagal Ginjal", "Gagal Jantung"];
+        output.risk = "Serangan Jantung, Gagal Ginjal, Gagal Jantung";
     }else if(MAP < 60){
         output.status = "Tekanan darah Rendah";
-        output.risk = ["Stroke", "Pendarahan Dalam", "Sepsis"]
+        output.risk = ["Stroke, Pendarahan Dalam, Sepsis"]
     }else {
         output.status = "normal";
     }
