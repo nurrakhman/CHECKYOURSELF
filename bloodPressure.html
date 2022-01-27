@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Pressure</title>
+    <link rel="stylesheet" href="style-bp.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <p>INI HEADER</p>
+      </div>
+      <div class="test-content bp">
+        <div class="form">
+          <h1>Tekanan Darah:</h1>
+          <form>
+            <label for="fnama-bp">Nama: </label>
+            <input
+              type="text"
+              id="fnama-bp"
+              name="nama-bp"
+              placeholder="Nama anda"
+              required
+            />
+            <label for="fdiastolik">Diastolik: </label>
+            <input
+              type="number"
+              id="fdiastolik"
+              name="diastolik"
+              placeholder="Nilai diastolik anda"
+              required
+            />
+            <label for="fsistolik">Sistolik: </label>
+            <input
+              type="number"
+              id="fsistolik"
+              name="sistolik"
+              placeholder="Nilai sistolik anda"
+              required
+            />
+            <button onclick="calculateBloodpressure(event)" class="process">
+              Proses
+            </button>
+          </form>
+        </div>
+        <div class="result">
+          <img id="dokter-bp" src="berpikir.jpg" alt="" />
+          <div class="result-info">
+            <p id="result-bp">Silahkan masukan data...</p>
+          </div>
+        </div>
+      </div>
+      <div class="test-content cole">
+        <div class="form">
+          <h1>Kolesterol</h1>
+          <form>
+            <label for="fnama-cole">Nama: </label>
+            <input
+              type="text"
+              id="fnama-cole"
+              name="fnama-cole"
+              placeholder="Nama anda"
+              required
+            />
+            <label for="fkolesterol">Nilai Kolesterol: </label>
+            <input
+              type="number"
+              id="fkolesterol"
+              name="fkolesterol"
+              placeholder="Nilai Kolesterol anda"
+            />
+            <label for="fbloop">Tekanan Darah: </label>
+            <select id="fbloop" name="fbloop">
+                <option value="tinggi">Tekanan Darah Tinggi</option>
+                <option value="normal">Tekanan Darah Normal</option>
+                <option value="rendah">Tekanan Darah Rendah</option>
+            </select>
+            <button onclick="calculateCholesterol(event)" class="process">
+              Proses
+            </button>
+          </form>
+        </div>
+        <div class="result">
+            <img id="dokter-cole" src="berpikir.jpg" alt="" />
+            <div class="result-info">
+              <p id="result-cole">Silahkan masukan data...</p>
+            </div>
+          </div>
+      </div>
+      <div class="footer">
+        <p>INI FOOTER</p>
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
