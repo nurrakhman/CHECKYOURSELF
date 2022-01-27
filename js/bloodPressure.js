@@ -1,4 +1,5 @@
-function bloodPressure(diastolik, sistolik){
+
+const count = (diastolik, sistolik) => {
     //https://www.healthline.com/health/mean-arterial-pressure#normal-map
     let MAP = diastolik + (0.33333333333 * (sistolik - diastolik));
     let output = {
@@ -18,7 +19,9 @@ function bloodPressure(diastolik, sistolik){
     }
     return output;
 }
+//TEST CASE
+// console.log(count(95,70)); //normal
+// console.log(count(200,100)); //normal
+// console.log(count(55,30)); //normal
 
-console.log(bloodPressure(95,70)); //normal
-console.log(bloodPressure(200,100)); //normal
-console.log(bloodPressure(55,30)); //normal
+exports.count = count;
