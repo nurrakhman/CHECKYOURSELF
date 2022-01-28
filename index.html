@@ -93,9 +93,8 @@
           <img src="assets/image/logoNew-01.png" class="logo" />
         </div>
         <a href="#home">Home</a>
+        <a href="#Products1">Features</a>
         <a href="#aboutUs">About Us</a>
-        <a href="#Products1">Products</a>
-        <a href="#Result">Result</a>
         <a href="javascript:void(0);" class="menu" onclick="myFunction()">
           <img src="assets/image/burger-menu.svg" class="icon" />
         </a>
@@ -168,49 +167,214 @@
       </div>
     </div>
     <!-- MENU UTAMA END -->
-
-    
-
   </main>
 
 
-    <!-- Blood pressure area Start-->
-    <section class="blood-pressure pt-100 pb-100" id="bp" style="display: none;">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="basic-check">
-              <h2 class="text-center mb-60">Checking Blood Pressure</h2>
-              <form action="#">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="fnama-bp" name="nama-bp" placeholder="Enter your name"
-                    required />
-                </div>
-                <div class="form-group">
-                  <input type="number" class="form-control" id="fdiastolik" name="diastolik"
-                    placeholder="Nilai diastolik anda" required />
-                </div>
-                <div class="form-group">
-                  <input type="number" class="form-control" id="fsistolik" name="sistolik"
-                    placeholder="Nilai sistolik anda" required />
-                </div>
-                <button class="site-btn red w-100" onclick="calculateBloodpressure(event)" class="process">Check</button>
-              </form>
-            </div>
-          </div>
-          <div class="col-lg-6 mt-lg-5">
-            <div class="result">
-              <img id="dokter-bp" src="assets/berpikir.jpg" alt="" />
-              <div class="result-info">
-                <p id="result-bp">Silahkan masukan data...</p>
+  <!-- Blood pressure area Start-->
+  <section class="blood-pressure pt-100 pb-100" id="bp" style="display: none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="basic-check">
+            <h2 class="text-center mb-60">Checking Blood Pressure</h2>
+            <form action="#">
+              <div class="form-group">
+                <input type="text" class="form-control" id="fnama-bp" name="nama-bp" placeholder="Enter your name"
+                  required />
               </div>
+              <div class="form-group">
+                <input type="number" class="form-control" id="fdiastolik" name="diastolik" placeholder="Your Diastolik"
+                  required />
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" id="fsistolik" name="sistolik" placeholder="Your Sistolik"
+                  required />
+              </div>
+              <button class="site-btn red w-100" onclick="calculateBloodpressure(event)" class="process">Check</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-lg-5">
+          <div class="result">
+            <img id="dokter-bp" src="assets/berpikir.jpg" alt="" />
+            <div class="result-info">
+              <p id="result-bp">Please enter your data!</p>
             </div>
           </div>
         </div>
-  
       </div>
-    </section>
-    <!-- Blood pressure area End-->
+
+    </div>
+  </section>
+  <!-- Blood pressure area End-->
+
+  <!-- Cholestrol area Start-->
+  <section class="cholestrol pt-100 pb-100" id="cole" style="display: none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="basic-check">
+            <h2 class="text-center mb-60">Checking Cholestrol</h2>
+            <form action="#">
+              <input type="text" id="fnama-cole" class="form-control" name="fnama-cole" placeholder="Nama anda"
+                required />
+              <input type="number" id="fkolesterol" class="form-control" name="fkolesterol"
+                placeholder="Nilai Kolesterol anda" />
+              <div class="form-group">
+                <select id="fbloop" name="fbloop" class="form-control">
+                  <option value="tinggi">Masukkan Tekanan Darah</option>
+                  <option value="tinggi">Tekanan Darah Tinggi</option>
+                  <option value="normal">Tekanan Darah Normal</option>
+                  <option value="rendah">Tekanan Darah Rendah</option>
+                </select>
+              </div>
+              <button class="site-btn red w-100" onclick="calculateCholesterol(event)" class="process">Check</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-lg-5">
+          <div class="result">
+            <img id="dokter-cole" src="assets/berpikir.jpg" alt="" />
+            <div class="result-info">
+              <p id="result-cole">Silahkan masukan data...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- Cholestrol area End-->
+
+  <!-- Blood sugar area Start-->
+  <section class="blood-sugar pt-100 pb-100" id="bs" style="display: none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="basic-check">
+            <h2 class="text-center mb-60">Checking Blood Sugar</h2>
+            <form action="#">
+              <input type="text" id="fnama-bs" class="form-control mt-3" name="fnama-bs"
+                placeholder="Masukkan nama anda" required />
+              <input type="number" id="age-bs" class="form-control" name="age-bs" placeholder="Masukkan umur anda" />
+              <input type="number" id="blood-sugar-bs" class="form-control" name="blood-sugar-bs"
+                placeholder="Masukkan gula darah anda" />
+              <button class="site-btn red w-100" onclick="bloodSugar(event)" class="process">Check</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-lg-5">
+          <div class="result">
+            <img id="dokter-bs" src="assets/berpikir.jpg" alt="" />
+            <div class="result-info">
+              <p id="result-bs">Silahkan masukan data...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!-- Blood sugar area End-->
+
+  <!-- BMI AREA Start-->
+  <section class="bmi pt-100 pb-100" id="bmi" style="display: none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="basic-check">
+            <h2 class="text-center mb-60">Checking BMI</h2>
+            <form action="#">
+              <input type="text" id="fnama-bmi" name="nama-bmi" placeholder="Enter your name" required />
+              <input type="number" id="fweight" name="weight" placeholder="Nilai weight anda" required />
+              <input type="number" id="fheight" name="height" placeholder="Nilai height anda" required />
+              <button class="site-btn red w-100" onclick="calculateBmi(event)" class="process">
+                Check
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-lg-5">
+          <div class="result">
+            <img id="dokter-bmi" src="assets/berpikir.jpg" alt="" />
+            <div class="result-info">
+              <p id="result-bmi">Silahkan masukan data...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- BMI AREA End-->
+
+  <!-- Akg area Start-->
+  <section class="akg pt-100 pb-100" id="akg" style="display: none;">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="basic-check akgform">
+            <h2 class="text-center mb-60">Checking AKG</h2>
+            <form action="#">
+              <form>
+          <div class="form-group">
+            <input type="text" class="form-control" id="fnama-akg" name="nama-akg" placeholder="Masukkan Nama Anda"
+              required />
+          </div>
+          <div class="row">
+            <input type="radio" id="radio-akg" name="gender-akg" value="perempuan" checked="checked" />
+            <label for="perempuan">Perempuan</label>
+            <input type="radio" id="radio-akg" name="gender-akg" value="laki-laki" />
+            <label for="perempuan">Laki-laki</label>
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" id="fweight-akg" name="weight-akg" placeholder="Berat Badan Anda"
+              required />
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" id="fheight-akg" name="height-akg" placeholder="Tinggi Badan Anda"
+              required />
+          </div>
+          <div class="form-group">
+            <input type="number" class="form-control" id="fage-akg" name="age-akg" placeholder="Umur Anda" required />
+          </div>
+          <label class="mt-10" style="text-align: center">Intensitas Olahraga</label>
+          <div class="row">
+            <div class="col-lg-2">
+              Sangat Jarang
+            </div>
+            <div class="col-lg-7">
+              <input type="radio" name="intensity-akg" id="radio-akg" value="1" checked="checked" />
+              <input type="radio" name="intensity-akg" id="radio-akg" value="2" />
+              <input type="radio" name="intensity-akg" id="radio-akg" value="2" />
+              <input type="radio" name="intensity-akg" id="radio-akg" value="4" />
+              <input type="radio" name="intensity-akg" id="radio-akg" value="5" />
+            </div>
+            <div class="col-lg-3">
+              Sangat Sering
+            </div>
+          </div>
+          <button class="site-btn red w-100" onclick="calculateAKG(event)" class="process">
+            Check
+          </button>
+        </form>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-lg-5">
+          <div class="result">
+            <img id="dokter-akg" src="assets/image/tanya.gif" alt="" />
+            <div class="result-info">
+              <p id="result-akg">Silahkan masukan data...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Akg area End-->
+
+
   <div class="container">
     <!-- <div class="test-content bp" id="bp" style="display: none;">
       <div class="form">
@@ -265,7 +429,7 @@
       </div>
     </div> -->
 
-    <div class="test-content cole" id="cole" style="display: none;">
+    <!-- <div class="test-content cole" id="cole" style="display: none;">
       <div class="form">
         <h5 style="margin-top: 40px">Kolesterol</h5>
         <form>
@@ -310,9 +474,9 @@
           <p id="result-cole">Silahkan masukan data...</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="test-content bs" id="bs" style="display: none;">
+    <!-- <div class="test-content bs" id="bs" style="display: none;">
       <div class="form">
         <h5 style="margin-top: 40px">Blood Sugar</h5>
         <form>
@@ -359,36 +523,18 @@
           <p id="result-bs">Silahkan masukan data...</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="test-content bmi" id="bmi" style="display: none;">
+    <!-- <div class="test-content bmi" id="bmi" style="display: none;">
       <div class="form">
         <h1>BMI Calculator:</h1>
         <form>
           <label for="fnama-bmi">Nama: </label>
-          <input
-            type="text"
-            id="fnama-bmi"
-            name="nama-bmi"
-            placeholder="Nama anda"
-            required
-          />
-          <label for="fweight">Weight: </label>
-          <input
-            type="number"
-            id="fweight"
-            name="weight"
-            placeholder="Nilai weight anda"
-            required
-          />
+          <input type="text" id="fnama-bmi" name="nama-bmi" placeholder="Nama anda" required />
+          <label for="fweight">Berat Badan: </label>
+          <input type="number" id="fweight" name="weight" placeholder="Nilai weight anda" required />
           <label for="fheight">Height: </label>
-          <input
-            type="number"
-            id="fheight"
-            name="height"
-            placeholder="Nilai height anda"
-            required
-          />
+          <input type="number" id="fheight" name="height" placeholder="Nilai height anda" required />
           <button onclick="calculateBmi(event)" class="process">
             Proses
           </button>
@@ -400,122 +546,56 @@
           <p id="result-bmi">Silahkan masukan data...</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="test-content akg" id="akg" style="display: none;">
+     <!-- <div class="test-content akg" id="akg" style="display: none;">
       <div class="form akgform">
         <h5 class="text-center" style="margin-top: 40px">
           Check your AKG here
         </h5>
         <form>
           <div class="form-group">
-            <input
-              type="text"
-              class="form-control"
-              id="fnama-akg"
-              name="nama-akg"
-              placeholder="Masukkan Nama Anda"
-              required
-            />
+            <input type="text" class="form-control" id="fnama-akg" name="nama-akg" placeholder="Masukkan Nama Anda"
+              required />
           </div>
           <div class="form-group">
-            <input
-              type="radio"
-              id="radio-akg"
-              name="gender-akg"
-              value="perempuan"
-              checked="checked"
-            />
+            <input type="radio" id="radio-akg" name="gender-akg" value="perempuan" checked="checked" />
             <label for="perempuan">Perempuan</label>
-            <input
-              type="radio"
-              id="radio-akg"
-              name="gender-akg"
-              value="laki-laki"
-            />
+            <input type="radio" id="radio-akg" name="gender-akg" value="laki-laki" />
             <label for="perempuan">Laki-laki</label>
           </div>
           <div class="form-group">
-            <input
-              type="number"
-              class="form-control"
-              id="fweight-akg"
-              name="weight-akg"
-              placeholder="Berat Badan Anda"
-              required
-            />
+            <input type="number" class="form-control" id="fweight-akg" name="weight-akg" placeholder="Berat Badan Anda"
+              required />
           </div>
           <div class="form-group">
-            <input
-              type="number"
-              class="form-control"
-              id="fheight-akg"
-              name="height-akg"
-              placeholder="Tinggi Badan Anda"
-              required
-            />
+            <input type="number" class="form-control" id="fheight-akg" name="height-akg" placeholder="Tinggi Badan Anda"
+              required />
           </div>
           <div class="form-group">
-            <input
-              type="number"
-              class="form-control"
-              id="fage-akg"
-              name="age-akg"
-              placeholder="Umur Anda"
-              required
-            />
+            <input type="number" class="form-control" id="fage-akg" name="age-akg" placeholder="Umur Anda" required />
           </div>
           <label style="text-align: center">Intensitas Olahraga</label>
-          <ul class="likert">
-            <li>Sangat Jarang</li>
-            <li>
-              <input
-                type="radio"
-                name="intensity-akg"
-                id="radio-akg"
-                value="1"
-                checked="checked"
-              />
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="intensity-akg"
-                id="radio-akg"
-                value="2"
-              />
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="intensity-akg"
-                id="radio-akg"
-                value="3"
-              />
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="intensity-akg"
-                id="radio-akg"
-                value="4"
-              />
-            </li>
-            <li>
-              <input
-                type="radio"
-                name="intensity-akg"
-                id="radio-akg"
-                value="5"
-              />
-            </li>
-            <li>Sangat Sering</li>
-          </ul>
-          <button
-            class="btn btn-primary mb-2"
-            onclick="calculateAKG(event)"
-            class="process"
-          >
+              <ul class="likert">
+                <li>Sangat Jarang</li>
+                <li>
+                  <input type="radio" name="intensity-akg" id="radio-akg" value="1" checked="checked" />
+                </li>
+                <li>
+                  <input type="radio" name="intensity-akg" id="radio-akg" value="2" />
+                </li>
+                <li>
+                  <input type="radio" name="intensity-akg" id="radio-akg" value="3" />
+                </li>
+                <li>
+                  <input type="radio" name="intensity-akg" id="radio-akg" value="4" />
+                </li>
+                <li>
+                  <input type="radio" name="intensity-akg" id="radio-akg" value="5" />
+                </li>
+                <li>Sangat Sering</li>
+              </ul>
+          <button class="btn btn-primary mb-2" onclick="calculateAKG(event)" class="process">
             Proses
           </button>
         </form>
@@ -526,50 +606,50 @@
           <p id="result-akg">Silahkan masukan data...</p>
         </div>
       </div>
-    </div>
+    </div>  -->
   </div>
-  
+
   <!-- ABOUT UD END -->
   <footer id="footer">
     <!--ABOUT US START, nanti bisa dipindah untuk penempatan-->
-  <div id="Shop" class="containter-shop-now">
-    <div id='aboutUs' style="margin: auto;">
-      <h1 class="text-center">ABOUT US</h1>
-      <p class="content-text text-center">KAMI TIM KEBENARAN DARI KELOMPOK 6</p>
-    </div>
-  </div>
-  <div class="flex-row3">
-    <div class="flex-column2">
-      <div>
-        <img class="shop-now2" src="assets/image/nurrakhman.png" alt="nurrakhman" class="shop">
-        <p class="aboutUsNama">Nurrakhman D.W</p>
+    <div id="Shop" class="containter-shop-now">
+      <div id='aboutUs' style="margin: auto;">
+        <h1 class="text-center">ABOUT US</h1>
+        <p class="content-text text-center">KAMI TIM KEBENARAN DARI KELOMPOK 6</p>
       </div>
     </div>
-    <div class="flex-column2">
-      <div>
-        <img class="shop-now2" src="assets/image/fitra.jpg" alt="fitra" class="shop">
-        <p class="aboutUsNama">Fitra Apri </p>
+    <div class="flex-row3">
+      <div class="flex-column2">
+        <div>
+          <img class="shop-now2" src="assets/image/nurrakhman.png" alt="nurrakhman" class="shop">
+          <p class="aboutUsNama">Nurrakhman D.W</p>
+        </div>
+      </div>
+      <div class="flex-column2">
+        <div>
+          <img class="shop-now2" src="assets/image/fitra.jpg" alt="fitra" class="shop">
+          <p class="aboutUsNama">Fitra Apri </p>
+        </div>
+      </div>
+      <div class="flex-column2">
+        <div>
+          <img class="shop-now2" src="assets/image/rosa.png" alt="rosa" class="shop">
+          <p class="aboutUsNama">Rosa Alawiyah</p>
+        </div>
+      </div>
+      <div class="flex-column2">
+        <div>
+          <img class="shop-now2" src="assets/image/berry.jpg" alt="berry" class="shop">
+          <p class="aboutUsNama">Busyairi R</p>
+        </div>
+      </div>
+      <div class="flex-column2">
+        <div>
+          <img class="shop-now2" src="assets/image/igna.png" alt="igna" class="shop">
+          <p class="aboutUsNama">Ignatius Andri</p>
+        </div>
       </div>
     </div>
-    <div class="flex-column2">
-      <div>
-        <img class="shop-now2" src="assets/image/rosa.png" alt="rosa" class="shop">
-        <p class="aboutUsNama">Rosa Alawiyah</p>
-      </div>
-    </div>
-    <div class="flex-column2">
-      <div>
-        <img class="shop-now2" src="assets/image/berry.jpg" alt="berry" class="shop">
-        <p class="aboutUsNama">Busyairi R</p>
-      </div>
-    </div>
-    <div class="flex-column2">
-      <div>
-        <img class="shop-now2" src="assets/image/igna.png" alt="igna" class="shop">
-        <p class="aboutUsNama">Ignatius Andri</p>
-      </div>
-    </div>
-  </div>
   </footer>
   <script src="./assets/js/index.js"></script>
 </body>

@@ -46,7 +46,7 @@ header {
   left: 20%;
 }
 
-button {
+/* button {
     padding: 5px 30px;
     background-color: #444241;
     font: condensed 16px roboto;
@@ -57,7 +57,7 @@ button {
 button:hover {
     background-color: #32393a;
     cursor: pointer;
-}
+} */
 
 body {
   font-family: sans-serif;
@@ -597,8 +597,11 @@ aside {
   }
 
   .akgform{
-    margin-top: 40px;
-    height: 600px;
+    margin-top: 20px;
+  }
+
+  #radio-akg{
+    margin : 8px;
   }
   
   .form form {
@@ -634,7 +637,7 @@ aside {
   
   .result-info {
     border-radius: 10px;
-    background-color: slateblue;
+    background: linear-gradient( 90deg, rgba(76, 188, 211, 1) 0%, rgba(1, 140, 196, 1) 100% );
     padding: 5px 20px;
     display: flex;
     flex-direction: row;
@@ -663,3 +666,68 @@ aside {
     float: left;
     list-style-type: none;
   }
+/* START STYLING FORM*/
+/* 24. Login */
+.basic-check {
+  padding: 90px;
+  border: 2px solid #eaedff;
+  margin: 20px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .basic-check {
+    padding: 50px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .basic-check {
+    padding: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .basic-check {
+    padding: 30px;
+  }
+}
+
+.basic-check h3 {
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.basic-check input {
+  height: 60px;
+  border: 2px solid #eaedff;
+  color: #6f7172;
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.basic-check label {
+  color: #222;
+  display: block;
+}
+
+.basic-check label span {
+  color: #fe4536;
+}
+
+
+.site-btn {
+	font-weight: 700;
+	padding: 17px 44px;
+	color: #fff;
+	text-transform: capitalize;
+	border-radius: 40px;
+	font-size: 16px;
+	display: inline-block;
+	position: relative;
+	transition: all 0.3s ease-in-out;
+	box-shadow: 0px 8px 16px 0px rgba(4, 142, 197, 0.3);
+	background: linear-gradient( 90deg, rgba(76, 188, 211, 1) 0%, rgba(1, 140, 196, 1) 100% );
+	border: 0;
+}
+
+/* End STYLING FORM*/
