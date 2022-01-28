@@ -228,9 +228,9 @@ function calculateBmi(event) {
 
     //SETTING OUTPUT
     let output;
-    if (hasil.Status === 'Underweigt') {
+    if (hasil.BMI <= 18.5) {
         output = `kamu memiliki score BMI ${hasil.BMI}, Kamu harus banyak makan`
-    } else if (hasil.Status === 'Normal') {
+    } else if (hasil.BMI > 18.5 && hasil.BMI <= 24.9) {
         output = ` kamu memiliki score BMI ${hasil.BMI}, Jaga terus ya kesehatan mu`
     } else {
         output = ` kamu memiliki score BMI ${hasil.BMI}, Kamu harus jaga pola makan `
