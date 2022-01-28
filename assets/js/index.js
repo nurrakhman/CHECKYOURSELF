@@ -351,9 +351,9 @@ function akg(name, gender, weight, height, age, intensity) {
     let intensityIndex = 0;
 
     if (gender === 'perempuan') { // female
-        calorie += 655 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
+        calorie += (10 * weight) + (6.25 * height) - (5 * age) - 161;
     } else { // male
-        calorie += 66 + (9.6 * weight) + (1.8 * height) - (4.7 * age);
+        calorie += (10 * weight) + (6.25 * height) - (5 * age) + 5;
     }
 
     // workout intensity
