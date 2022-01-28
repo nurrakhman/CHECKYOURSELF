@@ -1,6 +1,13 @@
 header {
   background-color: #c0fbff;
 }
+
+a,
+a:hover,
+a:visited,
+a:link {
+	text-decoration: none;
+}
 .logo {
   width: 25%;
 
@@ -322,7 +329,6 @@ h3 {
   color: #000000;
   text-align: center;
   padding: 14px 16px;
-  text-decoration: none;
   font-size: 17px;
 }
 
