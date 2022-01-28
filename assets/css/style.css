@@ -183,6 +183,7 @@ h1{
   opacity: 0.5;
 }
 .text-center {
+  font-family: "Roboto", sans-serif;
   text-align: center;
 }
 
@@ -234,7 +235,7 @@ h1 {
 }
 
 .content-text{
-  font: condensed 20px roboto;
+  font-family: "Roboto", sans-serif;
   color:  #393E46;
   margin: 5px 0;
 }
@@ -483,6 +484,7 @@ aside {
     bottom: 40%;
     left: 10%;
     font: condensed bolder 32px roboto;
+    font-family: "Roboto", sans-serif;
   }
   .position-button {
     bottom: 25%;
