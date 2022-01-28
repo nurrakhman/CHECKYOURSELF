@@ -125,7 +125,7 @@
     <div class="flex-row">
       <div class="flex-column">
         <div class="shop-now">
-          <a href="akg">
+          <a onclick="changeView(event,'akg')">
             <img src="assets/image/akg1a.jpg" alt="akg" class="shop2">
             <img src="assets/image/akg1.jpg" alt="akg" class="shop">
           </a>
@@ -133,7 +133,7 @@
       </div>
       <div class="flex-column">
         <div class="shop-now">
-          <a href="bmi">
+          <a onclick="changeView(event,'bmi')">
             <img src="assets/image/bmi1a.jpg" alt="bmi" class="shop2">
             <img src="assets/image/bmi1.jpg" alt="bmi" class="shop">
           </a>
@@ -141,7 +141,7 @@
       </div>
       <div class="flex-column">
         <div class="shop-now">
-          <a href="gulaDarah">
+          <a onclick="changeView(event,'bs')">
             <img src="assets/image/guladarah1a.jpg" alt="guladarah" class="shop2">
             <img src="assets/image/guladarah1.jpg" alt="guladarah" class="shop">
           </a>
@@ -152,7 +152,7 @@
     <div class="flex-row2">
       <div class="flex-column">
         <div class="shop-now">
-          <a href="tekananDarah">
+          <a onclick="changeView(event,'bp')">
             <img src="assets/image/tekanan_darah1a.jpg" alt="tekanan_darah" class="shop2">
             <img src="assets/image/tekanan_darah1.jpg" alt="tekanan_darah" class="shop">
           </a>
@@ -160,7 +160,7 @@
       </div>
       <div class="flex-column">
         <div class="shop-now">
-          <a href="kolestrol">
+          <a onclick="changeView(event,'cole')">
             <img src="assets/image/kolesterol1a.jpg" alt="tekanan_darah" class="shop2">
             <img src="assets/image/kolesterol.jpg" alt="tekanan_darah" class="shop">
           </a>
@@ -216,7 +216,7 @@
 
 
   <div class="container">
-    <div class="test-content bp">
+    <div class="test-content bp" id="bp" style="display: none;">
       <div class="form">
         <h5 class="text-center" style="margin-top: 40px">
           Check your blood pressure here
@@ -269,7 +269,7 @@
       </div>
     </div>
 
-    <div class="test-content cole">
+    <div class="test-content cole" id="cole" style="display: none;">
       <div class="form">
         <h5 style="margin-top: 40px">Kolesterol</h5>
         <form>
@@ -316,7 +316,7 @@
       </div>
     </div>
 
-    <div class="test-content bs">
+    <div class="test-content bs" id="bs" style="display: none;">
       <div class="form">
         <h5 style="margin-top: 40px">Blood Sugar</h5>
         <form>
@@ -365,7 +365,7 @@
       </div>
     </div>
 
-    <div class="test-content bmi">
+    <div class="test-content bmi" id="bmi" style="display: none;">
       <div class="form">
         <h1>BMI Calculator:</h1>
         <form>
@@ -406,7 +406,7 @@
       </div>
     </div>
 
-    <div class="test-content akg">
+    <div class="test-content akg" id="akg" style="display: none;">
       <div class="form akgform">
         <h5 class="text-center" style="margin-top: 40px">
           Check your AKG here

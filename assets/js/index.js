@@ -366,3 +366,60 @@ function akg(name, gender, weight, height, age, intensity) {
 
     return result;
 }
+
+
+function changeView(event, screen) {
+    // Prevent refresh page
+    event.preventDefault();
+    console.log("trigger " + screen)
+    let bp = document.getElementById("bp");
+    let cole = document.getElementById("cole");
+    let bs = document.getElementById("bs");
+    let bmi = document.getElementById("bmi");
+    let akg = document.getElementById("akg");
+    let dokter ="https://nurrakhman.github.io/CHECKYOURSELF/assets/image/tanya.gif";
+    let result ="Silahkan masukan data...";
+
+    //Hide ALL
+    bp.style.display = "none";
+    cole.style.display = "none";
+    bs.style.display = "none";
+    bmi.style.display = "none";
+    akg.style.display = "none";
+
+
+    switch (screen) {
+        case "bp":
+            bp.style.display = "flex";
+            bp.scrollIntoView({behavior: "smooth"});
+            document.getElementById("dokter-bp").src = dokter;
+            document.getElementById("result-bp").innerText = result;
+            break;
+        case "cole":
+            cole.style.display = "flex";
+            cole.scrollIntoView({behavior: "smooth"});
+            document.getElementById("dokter-cole").src = dokter;
+            document.getElementById("result-cole").innerText = result;
+            break;
+        case "bs":
+            bs.style.display = "flex";
+            bs.scrollIntoView({behavior: "smooth"});
+            document.getElementById("dokter-bs").src = dokter;
+            document.getElementById("result-bs").innerText = result;
+            break;
+        case "bmi":
+            bmi.style.display = "flex";
+            bmi.scrollIntoView({behavior: "smooth"});
+            document.getElementById("dokter-bmi").src = dokter;
+            document.getElementById("result-bmi").innerText = result;
+            break;
+        case "akg":
+            akg.style.display = "flex";
+            akg.scrollIntoView({behavior: "smooth"});
+            document.getElementById("dokter-akg").src = dokter;
+            document.getElementById("result-akg").innerText = result;
+            break;
+        default:
+            break;
+    }
+}
