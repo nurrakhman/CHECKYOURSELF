@@ -166,7 +166,7 @@ function bloodSugar(event) {
     let hasil = calculateBloodSugar(parseInt(age), parseInt(blood_sugar));
 
     //UPDATE GAMBAR DOKTER
-    if (hasil.status === "Terlalu Tinggi" || hasil.status === "Terlalu Rendah") {
+    if (hasil.status === "terlalu tinggi" || hasil.status === "terlalu rendah") {
         dataUser.dokter = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
     } else {
         dataUser.dokter = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
