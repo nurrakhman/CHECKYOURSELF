@@ -157,7 +157,7 @@ function bloodSugar(event) {
     }
 
     if (parseInt(age) < 1 || parseInt(blood_sugar) < 1 ) {
-        alert("tolong masukan bilangan positif");
+        alert("Tolong masukan bilangan positif");
         return
     }
     
@@ -173,10 +173,10 @@ function bloodSugar(event) {
     }
 
     //SETTING OUTPUT
-    if (hasil.status === "Normal") {
-        dataUser.result = `${name}, tekanan darah kamu ${hasil.status}, Jaga terus ya kesehatan mu`
+    if (hasil.status === "normal") {
+        dataUser.result = `HI! ${name}, tekanan darah kamu ${hasil.status}, jaga terus ya kesehatanmu!`
     } else {
-        dataUser.result = `${name}, tekanan darah kamu ${hasil.status}, hati - hati kamu dapat mengidap ${hasil.risk}. Jaga pola makan kamu ya!`
+        dataUser.result = `HI! ${name}, tekanan darah kamu ${hasil.status}, hati - hati kamu dapat mengidap ${hasil.risk}. Jaga pola makan kamu ya!`
     }
 
     //UPDATE RESULT
@@ -192,35 +192,33 @@ const calculateBloodSugar = (ageParams, bloodPressureParams) => {
     }
     if (ageParams < 6) {
         if (bloodPressureParams > 200) {
-            result.status = "Terlalu Tinggi";
+            result.status = "terlalu tinggi";
         } else if (bloodPressureParams >= 100) {
-            result.status = "Normal";
+            result.status = "normal";
         } else {
-            result.status = "Terlalu Rendah";
+            result.status = "terlalu rendah";
         }
     } else if (ageParams <= 12 && ageParams >= 6) {
         if (bloodPressureParams > 150) {
-            result.status = "Terlalu Tinggi";
+            result.status = "terlalu tinggi";
         } else if (bloodPressureParams >= 70) {
-            result.status = "Normal";
+            result.status = "normal";
         } else {
-            result.status = "Terlalu Rendah";
+            result.status = "terlalu rendah";
         }
     } else {
         if (bloodPressureParams > 130) {
-            result.status = "Terlalu Tinggi";
+            result.status = "terlalu tinggi";
         } else if (bloodPressureParams >= 70) {
-            result.status = "Normal";
+            result.status = "normal";
         } else {
-            result.status = "Terlalu Rendah";
+            result.status = "terlalu rendah";
         }
     }
-    if (result.status === "Terlalu Rendah") {
+    if (result.status === "terlalu rendah") {
         result.risk = "Lemas, Gelisah, Kulit terlihat pucat"
-    } else if (result.status === "Terlalu Tinggi") {
+    } else if (result.status === "terlalu tinggi") {
         result.risk = "Nafsu makan meningkat, Mudah lelah, Gelisah"
-    } else {
-        result.risk = "Anda masih normal, jaga terus ya kesehatanmu"
     }
     return result
 }
@@ -246,7 +244,7 @@ function calculateBmi(event) {
     }
 
     if (parseInt(weight) < 1 || parseInt(height) < 1 ) {
-        alert("tolong masukan bilangan positif");
+        alert("Tolong masukan bilangan positif");
         return
     }
 
@@ -263,11 +261,11 @@ function calculateBmi(event) {
     //SETTING OUTPUT
     let output;
     if (hasil.BMI <= 18.5) {
-        dataUser.result = `kamu memiliki score BMI ${hasil.BMI}, Kamu harus banyak makan`
+        dataUser.result = `Kamu memiliki score BMI ${hasil.BMI}, Kamu harus banyak makan`
     } else if (hasil.BMI > 18.5 && hasil.BMI <= 24.9) {
-        dataUser.result = ` kamu memiliki score BMI ${hasil.BMI}, Jaga terus ya kesehatan mu`
+        dataUser.result = `Kamu memiliki score BMI ${hasil.BMI}, Jaga terus ya kesehatan mu`
     } else {
-        dataUser.result = ` kamu memiliki score BMI ${hasil.BMI}, Kamu harus jaga pola makan `
+        dataUser.result = `Kamu memiliki score BMI ${hasil.BMI}, Kamu harus jaga pola makan `
     }
 
     //UPFATE RESULT
@@ -330,7 +328,7 @@ function calculateAKG(event) {
     }
 
     if (parseInt(weight) < 1 || parseInt(height) < 1 || parseInt(age) < 1 || parseInt(intensity) < 1) {
-        alert("tolong masukan bilangan positif");
+        alert("Tolong masukan bilangan positif");
         return
     }
 
