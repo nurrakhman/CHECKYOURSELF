@@ -174,10 +174,45 @@
   </main>
 
 
-
-
+    <!-- Blood pressure area Start-->
+    <section class="blood-pressure pt-100 pb-100" id="bp" style="display: none;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="basic-check">
+              <h2 class="text-center mb-60">Checking Blood Pressure</h2>
+              <form action="#">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="fnama-bp" name="nama-bp" placeholder="Enter your name"
+                    required />
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" id="fdiastolik" name="diastolik"
+                    placeholder="Nilai diastolik anda" required />
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" id="fsistolik" name="sistolik"
+                    placeholder="Nilai sistolik anda" required />
+                </div>
+                <button class="site-btn red w-100" onclick="calculateBloodpressure(event)" class="process">Check</button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-6 mt-lg-5">
+            <div class="result">
+              <img id="dokter-bp" src="assets/berpikir.jpg" alt="" />
+              <div class="result-info">
+                <p id="result-bp">Silahkan masukan data...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </section>
+    <!-- Blood pressure area End-->
   <div class="container">
-    <div class="test-content bp" id="bp" style="display: none;">
+    <!-- <div class="test-content bp" id="bp" style="display: none;">
       <div class="form">
         <h5 class="text-center" style="margin-top: 40px">
           Check your blood pressure here
@@ -228,7 +263,7 @@
           <p id="result-bp">Silahkan masukan data...</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="test-content cole" id="cole" style="display: none;">
       <div class="form">
