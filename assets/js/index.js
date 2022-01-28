@@ -162,39 +162,29 @@ const calculateBloodSugar = (ageParams, bloodPressureParams) => {
         status: "",
         risk: ""
     }
-    // console.log(bloodPressureParams);
     if (ageParams < 6) {
-        // 5 tahun, 120 (normal)
-        // 5 tahun, 90 (terlalu rendah)
-        // 5 tahun, 220 (terlalu tinggi)
         if (bloodPressureParams > 200) {
             result.status = "Terlalu Tinggi";
-        } else if (bloodPressureParams > 99) {
+        } else if (bloodPressureParams >= 100) {
             result.status = "Normal";
         } else {
             result.status = "Terlalu Rendah";
         }
     } else if (ageParams <= 12 && ageParams >= 6) {
-        //10 tahun, 80 (normal)
-        // 10 tahun, 60 (terlalu rendah)
-        // 10 tahun, 160 (terlalu tinggi)
-        if (bloodPressureParams <= 70 && bloodPressureParams >= 150) {
-            result.status = "Normal";
-        } else if (bloodPressureParams < 70) {
-            result.status = "Terlalu Rendah";
-        } else if (bloodPressureParams > 150) {
+        if (bloodPressureParams > 150) {
             result.status = "Terlalu Tinggi";
+        } else if (bloodPressureParams >= 70) {
+            result.status = "Normal";
+        } else {
+            result.status = "Terlalu Rendah";
         }
     } else {
-        // 15 tahun, 80 (normal)
-        // 15 tahun, 60 (terlalu rendah)
-        // 15 tahun, 160 (terlalu tinggi)
-        if (bloodPressureParams >= 70 && bloodPressureParams <= 130) {
-            result.status = "Normal";
-        } else if (bloodPressureParams < 70) {
-            result.status = "Terlalu Rendah";
-        } else if (bloodPressureParams > 130) {
+        if (bloodPressureParams > 130) {
             result.status = "Terlalu Tinggi";
+        } else if (bloodPressureParams >= 70) {
+            result.status = "Normal";
+        } else {
+            result.status = "Terlalu Rendah";
         }
     }
     if (result.status === "Terlalu Rendah") {
