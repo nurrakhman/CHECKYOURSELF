@@ -1,9 +1,16 @@
+let dataUser = {
+    name : "",
+    dokter : "",
+    result : "",
+}
+
 /////////////////////// BLOOD PRESSURE ///////////////////////
 function calculateBloodpressure(event) {
     //Prevent refresh page
     event.preventDefault();
     //DOM Form
     let name = document.getElementById("fnama-bp").value;
+    dataUser.name = name;
     let diastolik = document.getElementById("fdiastolik").value;
     let sistolik = document.getElementById("fsistolik").value;
     //DOM Tampilan
@@ -22,26 +29,34 @@ function calculateBloodpressure(event) {
         return
     }
 
+    if (parseInt(diastolik) < 1 || parseInt(sistolik) < 1) {
+        alert("tolong masukan bilangan positif");
+        return
+    }
+
     //MODUL FUNGSI
     let hasil = bloodPressure(parseInt(diastolik), parseInt(sistolik));
 
     //UPDATE GAMBAR DOKTER
     if (hasil.status === "Tekanan darah Tinggi" || hasil.status === "Tekanan darah Rendah") {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
+        dataUser.dokter = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
+
     } else {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
+        dataUser.dokter = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif"
     }
+    
 
     //SETTING OUTPUT
-    let output;
     if (hasil.status === "normal") {
-        output = `${name} kamu memiliki ${hasil.status}, Jaga terus ya kesehatan mu`
+        dataUser.result = `${name} kamu memiliki Tekanan darah ${hasil.status}, Jaga terus ya kesehatan mu`
     } else {
-        output = `${name} kamu memiliki ${hasil.status}, hati - hati kamu dapat mengidap ${hasil.risk}`
+        dataUser.result = `${name} kamu memiliki ${hasil.status}, hati - hati kamu dapat mengidap ${hasil.risk}`
     }
-
+    
+    
     //UPFATE RESULT
-    resultTxt.innerText = output;
+    dokter.src = dataUser.dokter;
+    resultTxt.innerText = dataUser.result;
 }
 //FUNGSI BLOODPRESSURE
 const bloodPressure = (diastolik, sistolik) => {
@@ -70,6 +85,7 @@ function calculateCholesterol(event) {
     event.preventDefault();
     //DOM Form
     let name = document.getElementById("fnama-cole").value;
+    dataUser.name = name;
     let kolesterol = document.getElementById("fkolesterol").value;
     let bp = document.getElementById("fbloop").value;
     //DOM Tampilan
@@ -82,26 +98,31 @@ function calculateCholesterol(event) {
         return
     }
 
+    if (parseInt(kolesterol) < 1) {
+        alert("tolong masukan bilangan positif");
+        return
+    }
+
     //MODUL FUNGSI
     let hasil = cholesterol(parseInt(kolesterol), bp);
 
     //UPDATE GAMBAR DOKTER
     if (hasil === "kadar kolestrol kamu terlalu tinggi" || hasil === "kadar kolestrol kamu tidak normal") {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
+        dataUser.dokter = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
     } else {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
+        dataUser.dokter = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
     }
 
     //SETTING OUTPUT
-    let output;
     if (hasil === "kadar kolestrol kamu normal") {
-        output = `${name}  ${hasil}, Jaga terus ya kesehatan mu`
+        dataUser.result = `${name}  ${hasil}, Jaga terus ya kesehatan mu`
     } else {
-        output = `${name}  ${hasil}, Ayo perbaiki kesehatan mu`
+        dataUser.result = `${name}  ${hasil}, Ayo perbaiki kesehatan mu`
     }
 
     //UPFATE RESULT
-    resultTxt.innerText = output;
+    resultTxt.innerText = dataUser.result;
+    dokter.src = dataUser.dokter;
 }
 
 //FUNGSI CHOLESTEROL
@@ -116,12 +137,13 @@ function cholesterol(kadarKolesrol, bloodPressure) {
 }
 
 
-/////////////////////// BLOOD PRESSURE ///////////////////////
+/////////////////////// BLOOD SUGAR ///////////////////////
 function bloodSugar(event) {
     //Prevent refresh page
     event.preventDefault();
     //DOM Form
     let name = document.getElementById("fnama-bs").value;
+    dataUser.name = name;
     let age = document.getElementById("age-bs").value;
     let blood_sugar = document.getElementById("blood-sugar-bs").value;
     //DOM Tampilan
@@ -133,27 +155,33 @@ function bloodSugar(event) {
         alert("Mohon lengkapi semua data terdahulu");
         return
     }
+
+    if (parseInt(age) < 1 || parseInt(blood_sugar) < 1 ) {
+        alert("tolong masukan bilangan positif");
+        return
+    }
+    
     console.log(parseInt(age) + " " + parseInt(blood_sugar));
     //MODUL FUNGSI
     let hasil = calculateBloodSugar(parseInt(age), parseInt(blood_sugar));
 
     //UPDATE GAMBAR DOKTER
     if (hasil.status === "Terlalu Tinggi" || hasil.status === "Terlalu Rendah") {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
+        dataUser.dokter = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
     } else {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
+        dataUser.dokter = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
     }
 
     //SETTING OUTPUT
-    let output;
     if (hasil.status === "Normal") {
-        output = `${name}, tekanan darah kamu ${hasil.status}, Jaga terus ya kesehatan mu`
+        dataUser.result = `${name}, tekanan darah kamu ${hasil.status}, Jaga terus ya kesehatan mu`
     } else {
-        output = `${name}, tekanan darah kamu ${hasil.status}, hati - hati kamu dapat mengidap ${hasil.risk}. Jaga pola makan kamu ya!`
+        dataUser.result = `${name}, tekanan darah kamu ${hasil.status}, hati - hati kamu dapat mengidap ${hasil.risk}. Jaga pola makan kamu ya!`
     }
 
     //UPDATE RESULT
-    resultTxt.innerText = output;
+    resultTxt.innerText = dataUser.result;
+    dokter.src = dataUser.dokter;
 }
 // FUNGSICALCULATBLOODSUGAR
 const calculateBloodSugar = (ageParams, bloodPressureParams) => {
@@ -204,6 +232,7 @@ function calculateBmi(event) {
     event.preventDefault();
     //DOM Form
     let name = document.getElementById("fnama-bmi").value;
+    dataUser.name = name;
     let weight = document.getElementById("fweight").value;
     let height = document.getElementById("fheight").value;
     //DOM Tampilan
@@ -216,28 +245,34 @@ function calculateBmi(event) {
         return
     }
 
+    if (parseInt(weight) < 1 || parseInt(height) < 1 ) {
+        alert("tolong masukan bilangan positif");
+        return
+    }
+
     //MODUL FUNGSI
     let hasil = testBmi(parseInt(weight), parseInt(height));
     // console.log(weight +'_'+ height);
     //UPDATE GAMBAR DOKTER
     if (hasil.BMI > 18.5 && hasil.BMI <= 24.9) {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
+        dataUser.dokter = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
     } else {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
+        dataUser.dokter = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/cemas.gif";
     }
 
     //SETTING OUTPUT
     let output;
     if (hasil.BMI <= 18.5) {
-        output = `kamu memiliki score BMI ${hasil.BMI}, Kamu harus banyak makan`
+        dataUser.result = `kamu memiliki score BMI ${hasil.BMI}, Kamu harus banyak makan`
     } else if (hasil.BMI > 18.5 && hasil.BMI <= 24.9) {
-        output = ` kamu memiliki score BMI ${hasil.BMI}, Jaga terus ya kesehatan mu`
+        dataUser.result = ` kamu memiliki score BMI ${hasil.BMI}, Jaga terus ya kesehatan mu`
     } else {
-        output = ` kamu memiliki score BMI ${hasil.BMI}, Kamu harus jaga pola makan `
+        dataUser.result = ` kamu memiliki score BMI ${hasil.BMI}, Kamu harus jaga pola makan `
     }
 
     //UPFATE RESULT
-    resultTxt.innerText = output;
+    resultTxt.innerText = dataUser.result;
+    dokter.src = dataUser.dokter;
 }
 
 //FUNGSI CHOLESTEROL
@@ -294,20 +329,18 @@ function calculateAKG(event) {
         return
     }
 
-
-
-    //MODUL FUNGSI
-    let hasil = akg(name, gender, parseInt(weight), parseInt(height), parseInt(age), parseInt(intensity));
-
-    //UPDATE GAMBAR DOKTER
-    if (name === name) {
-        dokter.src = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
+    if (parseInt(weight) < 1 || parseInt(height) < 1 || parseInt(age) < 1 || parseInt(intensity) < 1) {
+        alert("tolong masukan bilangan positif");
+        return
     }
 
-    // //SETTING OUTPUT
-    let output = hasil
+    //MODUL FUNGSI
+    dataUser.result = akg(name, gender, parseInt(weight), parseInt(height), parseInt(age), parseInt(intensity));
+    dataUser.dokter = "https://nurrakhman.github.io/CHECKYOURSELF/assets/image/smile.gif";
+    
     // //UPFATE RESULT
-    resultTxt.innerText = output;
+    resultTxt.innerText = dataUser.result;
+    dokter.src = dataUser.dokter;
 }
 
 //FUNGSI AKG
@@ -384,32 +417,53 @@ function changeView(event, screen) {
             bp.scrollIntoView({behavior: "smooth"});
             document.getElementById("dokter-bp").src = dokter;
             document.getElementById("result-bp").innerText = result;
+            document.getElementById("fnama-bp").value = dataUser.name;
+            document.getElementById("fdiastolik").value = "";
+            document.getElementById("fsistolik").value = "";
             break;
         case "cole":
             cole.style.display = "flex";
             cole.scrollIntoView({behavior: "smooth"});
             document.getElementById("dokter-cole").src = dokter;
             document.getElementById("result-cole").innerText = result;
+            document.getElementById("fnama-cole").value = dataUser.name;
+            document.getElementById("fkolesterol").value = "";
+            document.getElementById("fbloop").value = "";
             break;
         case "bs":
             bs.style.display = "flex";
             bs.scrollIntoView({behavior: "smooth"});
             document.getElementById("dokter-bs").src = dokter;
             document.getElementById("result-bs").innerText = result;
+            document.getElementById("fnama-bs").value = dataUser.name;
+            document.getElementById("age-bs").value = "";
+            document.getElementById("blood-sugar-bs").value = "";
             break;
         case "bmi":
             bmi.style.display = "flex";
             bmi.scrollIntoView({behavior: "smooth"});
             document.getElementById("dokter-bmi").src = dokter;
             document.getElementById("result-bmi").innerText = result;
+            document.getElementById("fnama-bmi").value = dataUser.name;
+            document.getElementById("fweight").value = "";
+            document.getElementById("fheight").value = "";
             break;
         case "akg":
             akg.style.display = "flex";
             akg.scrollIntoView({behavior: "smooth"});
             document.getElementById("dokter-akg").src = dokter;
             document.getElementById("result-akg").innerText = result;
+            document.getElementById("fnama-akg").value = dataUser.name;
+            document.getElementById("fweight-akg").value = "";
+            document.getElementById("fheight-akg").value = "";
+            document.getElementById("fage-akg").value = "";
             break;
         default:
             break;
     }
+}
+
+function clearData(event,screen){
+    dataUser.name = ""
+    changeView(event,screen)
 }
